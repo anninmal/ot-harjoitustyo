@@ -1,0 +1,205 @@
+commit 2bb9badbbff7257df2a2aa9b5deddf054d27e4d3
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 18:28:04 2020 +0200
+
+
+
+    tehtiin muutoksia
+
+
+
+ tiedostoja/file2             | 0
+
+ tiedostoja/{file1 => file22} | 0
+
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+
+
+commit 132d91e835a93d3ef0780d867ed2086fa9a26d47
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 18:22:56 2020 +0200
+
+
+
+    tiedostot file1,2,3 luotu.
+
+
+
+ tiedostoja/file1 | 0
+
+ tiedostoja/file2 | 0
+
+ tiedostoja/file3 | 0
+
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+
+
+commit fb59b9f18b26eff9fc1c493348f57a403323917a
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 17:55:37 2020 +0200
+
+
+
+    muutettiin nimeä
+
+
+
+ tiedosto.txt => eka.txt | 0
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+
+
+commit 5d740032c13c5c48c41e73fb4217563dbf033f1c
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 17:53:38 2020 +0200
+
+
+
+    poistettiin toinen.txt
+
+
+
+ toinen.txt | 1 -
+
+ 1 file changed, 1 deletion(-)
+
+
+
+commit 0177383b913cccc6e88d9a296290730ac0a5dea7
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 17:50:07 2020 +0200
+
+
+
+    muokattiin tiedostoa tiedosto.txt taas
+
+
+
+ tiedosto.txt | 4 +---
+
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+
+
+commit 75c0d582e76d963c0afcea59cf1e87fb670d84c2
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 17:47:31 2020 +0200
+
+
+
+    muokattiin tiedostoa tiedosto.txt
+
+
+
+ tiedosto.txt | 1500 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+
+ 1 file changed, 1499 insertions(+), 1 deletion(-)
+
+
+
+commit e978405b4f2a420a8a10e80fdc5d5ac08a6ffbc0
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 17:37:33 2020 +0200
+
+
+
+    hakemisto stuff ja tiedosto things.txt luotu
+
+
+
+ stuff/things.txt | 0
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+
+
+commit 9cd0b3114df7f3e91429f1d5d6765b76bbb8e426
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 17:35:51 2020 +0200
+
+
+
+    tokaa ja kolmatta muutettu
+
+
+
+ kolmas.txt | 1 +
+
+ toinen.txt | 1 +
+
+ 2 files changed, 2 insertions(+)
+
+
+
+commit b947c1f34e1ec24b2d2e9680963a872de7577c7d
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 17:33:56 2020 +0200
+
+
+
+    kolmas luotu
+
+
+
+ kolmas.txt | 0
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+
+
+commit 420442a0d8eea0370ce79cecb9d72731ead15013
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 17:29:39 2020 +0200
+
+
+
+    muutos ja lisäys
+
+
+
+ tiedosto.txt | 1 +
+
+ toinen.txt   | 0
+
+ 2 files changed, 1 insertion(+)
+
+
+
+commit 31b16f4f6b32209fb09ea0f4175ff4a507e4f5c5
+
+Author: Annina Malmsten <annina.malmsten@helsinki.fi>
+
+Date:   Fri Mar 13 16:29:06 2020 +0200
+
+
+
+    tiedosto.txt luotu
+
+
+
+ tiedosto.txt | 0
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
