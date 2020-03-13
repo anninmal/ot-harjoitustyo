@@ -1,11 +1,9 @@
-# Protect yourself and others!
+# Ohjelmistotekniikka, harjoitustyö
 
-* Wash your hands **often**!
+## Tehtävät
 
-* Chough in your *elbow* or in a *tissue*!
+### Viikko 1
 
-* Do **not** shake hands!
+[gitlog.txt](https://github.com/anninmal/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
-* Work from *home* and avoid traveling!
-
-* If you feel sick: **Stay home and avoid contact!**
+[komentorivi.txt](https://github.com/anninmal/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
