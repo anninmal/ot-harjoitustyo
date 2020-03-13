@@ -1,4 +1,4 @@
-# Protect youself and others!
+# Protect yourself and others!
 
 * Wash your hands **often**!
 
