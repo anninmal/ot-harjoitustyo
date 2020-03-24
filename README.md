@@ -16,7 +16,7 @@
 
 ![Screenshot](https://github.com/anninmal/ot-harjoitustyo/blob/master/laskarit/viikko2/laskarit_viikko2_screenshot.png?raw=true)
 
-### Dokumentaatio
+### Dokumentointi
 
 [Vaatimusmäärittely](https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
