@@ -23,6 +23,7 @@ public class CharacterSheet {
     public CharacterSheet() {
         this.random = new Random();
         this.racelist = new ArrayList<>();
+        this.abilityScores = new ArrayList<>();
     }
     
     public void createRaces() {
@@ -109,10 +110,10 @@ public class CharacterSheet {
         int score = 0;
         int ind = 1;
         List<Integer> rolls = new ArrayList<>();
-        while (abilityScores.size() < 5) {
+        while (this.abilityScores.size() < 6) {
             ind = 1;
-            while (ind < 4) {
-                int roll = this.random.nextInt(5) + 1;
+            while (ind < 5) {
+                int roll = this.random.nextInt(6) + 1;
                 rolls.add(roll);
                 ind++;
             }
@@ -121,10 +122,18 @@ public class CharacterSheet {
             for(int roll: rolls) {
                 score = score + roll;
             }
-            abilityScores.add(score);
+            this.abilityScores.add(score);
             score = 0;
             rolls.clear();
         }
+    }
+    
+    public List<Integer> getAbilityScores() {
+        return this.abilityScores;
+    }
+    
+    public void eraseAbilityScores() {
+        this.abilityScores.clear();
     }
     
 }

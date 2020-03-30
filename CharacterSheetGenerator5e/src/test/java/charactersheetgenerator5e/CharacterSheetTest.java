@@ -1,37 +1,30 @@
 package charactersheetgenerator5e;
 
-import org.junit.After;
-import org.junit.AfterClass;
+import charactersheetgenerator5e.domain.CharacterSheet;
+import java.util.List;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 
 public class CharacterSheetTest {
     
-    public CharacterSheetTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+    CharacterSheet sheet;
+         
     @Before
     public void setUp() {
+        sheet = new CharacterSheet();
     }
     
-    @After
-    public void tearDown() {
+    @Test
+    public void generateAbilityScoresGeneratesSixRandomScoresBetween4And18() {
+        sheet.generateAbilityScores();
+        List<Integer> scores = sheet.getAbilityScores();
+        
+        assertTrue("There should be 6 numbers in the abilityScores list.", scores.size() == 6);
+        
+        for (int i = 0; i <= 5; i++) {
+            assertTrue("Ability scores should be between 4 and 18.", scores.get(i) >=4 && scores.get(i) <= 18);
+        }
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
