@@ -1,20 +1,7 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Character Sheet Generator 5e
+(Dungeons & Dragons 5e hahmolomakegeneraattori)
 
-## Tehtävät
-
-### Viikko 1
-
-[gitlog.txt](https://github.com/anninmal/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/anninmal/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-### Viikko 2
-
-[Maksukortti](https://github.com/anninmal/ot-harjoitustyo/tree/master/laskarit/viikko2/Maksukortti)
-
-[Unicafe](https://github.com/anninmal/ot-harjoitustyo/tree/master/laskarit/viikko2/Unicafe)
-
-![Screenshot](https://github.com/anninmal/ot-harjoitustyo/blob/master/laskarit/viikko2/laskarit_viikko2_screenshot.png?raw=true)
+Sovelluken avulla voidaan luoda satunnaistettu Dungeons & Dragons 5e hahmolomake tason 1 hahmolle, noudattaen pelaajan käsikirjan (Player's Handbook) perusohjeita. Hahmolomake voidaan tallentaa tiedostolle.
 
 ### Dokumentointi
 
