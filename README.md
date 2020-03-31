@@ -5,6 +5,6 @@ Sovelluken avulla voidaan luoda satunnaistettu Dungeons & Dragons 5e hahmolomake
 
 ### Dokumentointi
 
-[Vaatimusmäärittely](https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
+[Vaatimusmäärittely](vaatimusmaarittely.md)
 
-[Työaikakirjanpito](https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+[Työaikakirjanpito](tyoaikakirjanpito.md)
