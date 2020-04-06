@@ -9,6 +9,7 @@ public class CharacterSheet {
     
     private Random random;
     private List<Integer> abilityScores;
+    private List<Integer> abilityScoreModifiers;
     private Race race;
     private List<Race> racelist;
     private CharacterClass cclass;
@@ -24,6 +25,7 @@ public class CharacterSheet {
         this.random = new Random();
         this.racelist = new ArrayList<>();
         this.abilityScores = new ArrayList<>();
+        this.abilityScoreModifiers = new ArrayList<>();
     }
     
     public void createRaces() {
@@ -107,6 +109,10 @@ public class CharacterSheet {
     }
     
     public void generateAbilityScores() {
+        if (this.abilityScores != null) {
+            this.abilityScores.clear();
+        }
+        
         int score = 0;
         int ind = 1;
         List<Integer> rolls = new ArrayList<>();
@@ -128,8 +134,40 @@ public class CharacterSheet {
         }
     }
     
+    public void generateAbilityScoreModifiers() {
+        if (this.abilityScoreModifiers != null) {
+            this.abilityScoreModifiers.clear();
+        }
+        
+        for(int as: this.abilityScores) {
+            if (as == 4 || as == 5) {
+                this.abilityScoreModifiers.add(-3);
+            } else if (as == 6 || as == 7) {
+                this.abilityScoreModifiers.add(-2);
+            } else if (as == 8 || as == 9) {
+                this.abilityScoreModifiers.add(-1);
+            } else if (as == 10 || as == 11) {
+                this.abilityScoreModifiers.add(0);
+            } else if (as == 12 || as == 13) {
+                this.abilityScoreModifiers.add(1);
+            } else if (as == 14 || as == 15) {
+                this.abilityScoreModifiers.add(2);
+            } else if (as == 16 || as == 17) {
+                this.abilityScoreModifiers.add(3);
+            } else if (as == 18 || as == 19) {
+                this.abilityScoreModifiers.add(4);
+            } else {
+                this.abilityScoreModifiers.add(5);
+            }
+        }
+    }
+    
     public List<Integer> getAbilityScores() {
         return this.abilityScores;
+    }
+    
+    public List<Integer> getAbilityScoreModifiers() {
+        return this.abilityScoreModifiers;
     }
     
     public void eraseAbilityScores() {

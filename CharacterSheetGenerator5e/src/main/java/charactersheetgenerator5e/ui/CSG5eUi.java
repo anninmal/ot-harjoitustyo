@@ -13,10 +13,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class CSG5eUi extends Application {
+    private Scene startScene;
+    private Scene sheetScene;
     
+    private VBox fullSheet;
     private CharacterSheet characterSheet;
     
     @Override
@@ -28,7 +33,7 @@ public class CSG5eUi extends Application {
     public void start(Stage window) throws Exception {
         // start scene
         
-        BorderPane layout = new BorderPane();
+        BorderPane startLayout = new BorderPane();
         VBox content = new VBox();
         
         Label title = new Label("Dungeons & Dragons 5e" + "\n" + "Random Character Sheet Generator");
@@ -115,15 +120,138 @@ public class CSG5eUi extends Application {
         content.getChildren().add(backgroundChoice);
         content.getChildren().add(generateButton);
         
-        layout.setCenter(content);
+        startLayout.setCenter(content);
         
         generateButton.setOnMouseClicked((event) -> {
-            
+            window.setScene(sheetScene);
         });
         
-        Scene view = new Scene(layout);
+        startScene = new Scene(startLayout);
         
-        window.setScene(view);
+        // character sheet scene
+        
+        BorderPane sheetLayout = new BorderPane();
+        HBox sheetTopField1 = new HBox(20);
+        HBox sheetTopField2 = new HBox(20);
+        VBox sheetColumn1 = new VBox(5);
+        VBox sheetColumn2 = new VBox(15);
+        VBox sheetColumn3 = new VBox(15);
+        VBox sheetColumn4 = new VBox(15);
+        HBox columns = new HBox(10);
+        HBox buttons = new HBox();
+        VBox fullView = new VBox();
+        fullSheet = new VBox(15);
+        
+        columns.getChildren().add(sheetColumn1);
+        columns.getChildren().add(sheetColumn2);
+        columns.getChildren().add(sheetColumn3);
+        columns.getChildren().add(sheetColumn4);
+        fullSheet.getChildren().add(sheetTopField1);
+        fullSheet.getChildren().add(sheetTopField2);
+        fullSheet.getChildren().add(columns);
+        fullView.getChildren().add(fullSheet);
+        fullView.getChildren().add(buttons);
+        
+        //placeholders will be replaced by strings taken from the class CharacterSheet once it's functional.
+        Label sheetClassLabel = new Label("(Class)" + " 1");
+        Label sheetBackgroundLabel = new Label("(Background)");
+        Label sheetRaceLabel = new Label("(Race)");
+        Label sheetAlignmentLabel = new Label("(Alignment)");
+        Label sheetNameLabel = new Label(nameField.getText());
+        
+        sheetTopField1.getChildren().add(sheetClassLabel);
+        sheetTopField1.getChildren().add(sheetBackgroundLabel);
+        sheetTopField1.getChildren().add(sheetNameLabel);
+        sheetTopField2.getChildren().add(sheetRaceLabel);
+        sheetTopField2.getChildren().add(sheetAlignmentLabel);
+        
+        Label strLabel = new Label("Strength");
+        strLabel.setFont(Font.font("Monospaced", FontWeight.BOLD, 12));
+        Label dexLabel = new Label("Dexterity");
+        dexLabel.setFont(Font.font("Monospaced", FontWeight.BOLD, 12));
+        Label conLabel = new Label("Constitution");
+        conLabel.setFont(Font.font("Monospaced", FontWeight.BOLD, 12));
+        Label intLabel = new Label("Intelligence");
+        intLabel.setFont(Font.font("Monospaced", FontWeight.BOLD, 12));
+        Label wisLabel = new Label("Wisdom");
+        wisLabel.setFont(Font.font("Monospaced", FontWeight.BOLD, 12));
+        Label chaLabel = new Label("Charisma");
+        chaLabel.setFont(Font.font("Monospaced", FontWeight.BOLD, 12));
+        
+        characterSheet.generateAbilityScores();
+        characterSheet.generateAbilityScoreModifiers();
+        
+        Label strScoreLabel = new Label("(" + characterSheet.getAbilityScores().get(0).toString() + ")");
+        Label dexScoreLabel = new Label("(" + characterSheet.getAbilityScores().get(1).toString() + ")");
+        Label conScoreLabel = new Label("(" + characterSheet.getAbilityScores().get(2).toString() + ")");
+        Label intScoreLabel = new Label("(" + characterSheet.getAbilityScores().get(3).toString() + ")");
+        Label wisScoreLabel = new Label("(" + characterSheet.getAbilityScores().get(4).toString() + ")");
+        Label chaScoreLabel = new Label("(" + characterSheet.getAbilityScores().get(5).toString() + ")");
+        
+        Label strModLabel = new Label(characterSheet.getAbilityScoreModifiers().get(0).toString());
+        Label dexModLabel = new Label(characterSheet.getAbilityScoreModifiers().get(1).toString());
+        Label conModLabel = new Label(characterSheet.getAbilityScoreModifiers().get(2).toString());
+        Label intModLabel = new Label(characterSheet.getAbilityScoreModifiers().get(3).toString());
+        Label wisModLabel = new Label(characterSheet.getAbilityScoreModifiers().get(4).toString());
+        Label chaModLabel = new Label(characterSheet.getAbilityScoreModifiers().get(5).toString());
+        
+        strScoreLabel.setFont(Font.font("Monospaced", 14));
+        dexScoreLabel.setFont(Font.font("Monospaced", 14));
+        conScoreLabel.setFont(Font.font("Monospaced", 14));
+        intScoreLabel.setFont(Font.font("Monospaced", 14));
+        wisScoreLabel.setFont(Font.font("Monospaced", 14));
+        chaScoreLabel.setFont(Font.font("Monospaced", 14));
+        
+        strModLabel.setFont(Font.font("Monospaced", 24));
+        dexModLabel.setFont(Font.font("Monospaced", 24));
+        conModLabel.setFont(Font.font("Monospaced", 24));
+        intModLabel.setFont(Font.font("Monospaced", 24));
+        wisModLabel.setFont(Font.font("Monospaced", 24));
+        chaModLabel.setFont(Font.font("Monospaced", 24));
+        
+        sheetColumn1.getChildren().add(strLabel);
+        sheetColumn1.getChildren().add(strModLabel);
+        sheetColumn1.getChildren().add(strScoreLabel);
+        sheetColumn1.getChildren().add(dexLabel);
+        sheetColumn1.getChildren().add(dexModLabel);
+        sheetColumn1.getChildren().add(dexScoreLabel);
+        sheetColumn1.getChildren().add(conLabel);
+        sheetColumn1.getChildren().add(conModLabel);
+        sheetColumn1.getChildren().add(conScoreLabel);
+        sheetColumn1.getChildren().add(intLabel);
+        sheetColumn1.getChildren().add(intModLabel);
+        sheetColumn1.getChildren().add(intScoreLabel);
+        sheetColumn1.getChildren().add(wisLabel);
+        sheetColumn1.getChildren().add(wisModLabel);
+        sheetColumn1.getChildren().add(wisScoreLabel);
+        sheetColumn1.getChildren().add(chaLabel);
+        sheetColumn1.getChildren().add(chaModLabel);
+        sheetColumn1.getChildren().add(chaScoreLabel);
+        
+        Label proficiencyBonusLabel = new Label("Proficiency Bonus: 2");
+        Label savingThrowsLabel = new Label("Saving Throws: ");
+        Label skillsLabel = new Label("Skills: ");
+        
+        sheetColumn2.getChildren().add(proficiencyBonusLabel);
+        sheetColumn2.getChildren().add(savingThrowsLabel);
+        sheetColumn2.getChildren().add(skillsLabel);
+        
+        Button backButton = new Button("Back");
+        Button generateAgainButton = new Button("Generate!");
+        Button saveButton = new Button("Save Sheet");
+        
+        buttons.getChildren().add(backButton);
+        buttons.getChildren().add(generateAgainButton);
+        buttons.getChildren().add(saveButton);
+        
+        backButton.setOnMouseClicked((event) -> {
+            window.setScene(startScene);
+        });
+        
+        sheetLayout.setCenter(fullView);
+        sheetScene = new Scene(sheetLayout);
+        
+        window.setScene(startScene);
         window.show();
     }
     
