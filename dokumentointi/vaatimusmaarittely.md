@@ -9,7 +9,7 @@ Sovelluken avulla voidaan luoda satunnaistettu Dungeons & Dragons 5e hahmolomake
 ### Ensimmäinen näkymä
 - Käyttäjä voi valita, mitkä ominaisuudet satunnaistetaan, ja mitkä ei.
 - Jokaisen ominaisuuden eri vaihtoehdot esitetään avattavassa valikossa. **(tehty)**
-  -Avattavan valikon vaihtoehdot rajoittavat käyttäjän valinnat niihin vaihtoehtoihin, jotka on koodattu sovellukseen.
+  - Avattavan valikon vaihtoehdot rajoittavat käyttäjän valinnat niihin vaihtoehtoihin, jotka on koodattu sovellukseen.
 - Niihin ominaisuuksiin, jotka käyttäjä pystyy valitsemaan etukäteen, kuuluu hahmon rotu, luokka, hengenlaatu sekä tausta. **(tehty)**
 - Käyttäjä voi myös kirjoittaa hahmolle nimen. **(tehty)**
   - Jos nimi jätetään tyhjäksi, niin se on valmiissa hahmolomakkeessa myös tyhjä.
