@@ -1,4 +1,4 @@
-package charactersheetgenerator5e.domain;
+package charactersheetgenerator.domain;
 
 import java.util.ArrayList;
 import java.util.List;

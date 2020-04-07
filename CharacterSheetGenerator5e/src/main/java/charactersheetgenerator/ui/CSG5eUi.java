@@ -1,6 +1,6 @@
-package charactersheetgenerator5e.ui;
+package charactersheetgenerator.ui;
 
-import charactersheetgenerator5e.domain.CharacterSheet;
+import charactersheetgenerator.domain.CharacterSheet;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

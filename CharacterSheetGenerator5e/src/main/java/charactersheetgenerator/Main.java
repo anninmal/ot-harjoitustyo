@@ -1,6 +1,6 @@
-package charactersheetgenerator5e;
+package charactersheetgenerator;
 
-import charactersheetgenerator5e.ui.CSG5eUi;
+import charactersheetgenerator.ui.CSG5eUi;
 
 public class Main {
     public static void main(String[] args) {
