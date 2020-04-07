@@ -9,5 +9,5 @@
 | 30.3. | 4 | käyttöliittymän työstäminen, testin kirjoittaminen, testissä ilmenneen ongelman ratkaiseminen |
 | 31.3. | 0,5 | varmistus siitä, että arvostelukriteerit täyttyvät |
 | 6.4. | 3,5 |  käyttöliittymän laajentaminen: käyttäjä pääsee napin kautta toiseen näkymään, ja takaisin ensimmäiseen näkymään. toisen näkymän luonti aloitettu. lomake näyttää satunnaistetut kykyarvot. |
-| 7.4. | 4 | tausta-luokka luotu ja hahmolomakkeen hallinta-/satunnaistajaluokkaa laajennettu. checkstyle otettu käyttöön. testausta edistetty. |
-| yht   | 21   | | 
+| 7.4. | 5 | tausta-luokka luotu ja hahmolomakkeen hallinta-/satunnaistajaluokkaa laajennettu. checkstyle otettu käyttöön. testausta edistetty. luokkakaavion teko. |
+| yht   | 22   | | 
