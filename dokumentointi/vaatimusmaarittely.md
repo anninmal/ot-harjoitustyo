@@ -21,7 +21,7 @@ Sovelluken avulla voidaan luoda satunnaistettu Dungeons & Dragons 5e hahmolomake
   - Rotu
   - Luokka
   - Aliluokka
-  - Kykyarvot
+  - Kykyarvot **(tehty)**
   - Taitoperehtyneisyys
   - Hengenlaatu
   - Tausta
