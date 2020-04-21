@@ -10,4 +10,7 @@
 | 31.3. | 0,5 | varmistus siitä, että arvostelukriteerit täyttyvät |
 | 6.4. | 3,5 |  käyttöliittymän laajentaminen: käyttäjä pääsee napin kautta toiseen näkymään, ja takaisin ensimmäiseen näkymään. toisen näkymän luonti aloitettu. lomake näyttää satunnaistetut kykyarvot. |
 | 7.4. | 5 | tausta-luokka luotu ja hahmolomakkeen hallinta-/satunnaistajaluokkaa laajennettu. checkstyle otettu käyttöön. testausta edistetty. luokkakaavion teko. |
-| yht   | 22   | | 
+| 18.4 | 1 | käyttöliittymää laajennettu. |
+| 20.4 | 4 | käyttöliittymää ja hahmolomakkeen hallinta-/satunnaistajaluokkaa laajennettu. testausta edistetty. |
+| 21.4 | 5 | käyttöliittymää ja hahmolomakkeen hallinta-/satunnaistajaluokkaa laajennettu. sovellus näyttää nyt käyttäjälle enemmän tietoa, kuten hahmon rodun, luokan, taustan, hengenlaadun, varusteet, taitoperehtyneisyydet, ym. "saving throws" ja "skills" toimii muuten, paisti että ne näyttävät jostain (tällä hetkellä) käsittämättömästä syystä aivan vääriä arvoja... |
+| yht   | 32   | | 
