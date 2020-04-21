@@ -4,18 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Race {
-    
- //   private Integer id;
+
     private String name;
     private Integer speed;
     private List<String> traitlist;
     private List<String> proficiencylist;
     
     public Race(String name, Integer speed) {
-        //this.id = id;
         this.name = name;
         this.speed = speed;
         this.traitlist = new ArrayList<>();
+        this.proficiencylist = new ArrayList<>();
     }
     
     public String getName() {

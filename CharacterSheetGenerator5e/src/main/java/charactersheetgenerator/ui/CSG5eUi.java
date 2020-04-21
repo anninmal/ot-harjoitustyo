@@ -15,6 +15,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class CSG5eUi extends Application {
@@ -31,13 +32,14 @@ public class CSG5eUi extends Application {
     
     @Override
     public void start(Stage window) throws Exception {
+        window.setTitle("D&D 5e Random Character Sheet Generator");
         // start scene
         
         BorderPane startLayout = new BorderPane();
         VBox content = new VBox();
         
         Label title = new Label("Dungeons & Dragons 5e" + "\n" + "Random Character Sheet Generator");
-        Label instructions = new Label("instructions here" + "\n" + "\n");
+        Label instructions = new Label("Pick race, class, alignment, and background for your character!\nOptions left empty will be randomized.\nPicking a name is optional.\n[APP CURRENTLY ONLY SUPPORTS RANDOM GENERATION]\n\n");
         Label nameLabel = new Label("Name:");
         Label raceLabel = new Label("Race:");
         Label classLabel = new Label("Class:");
@@ -51,32 +53,32 @@ public class CSG5eUi extends Application {
         ChoiceBox alignmentChoice = new ChoiceBox();
         ChoiceBox backgroundChoice = new ChoiceBox();
         
-        raceChoice.getItems().add("Random");
-        raceChoice.getItems().add("Dwarf");
-        raceChoice.getItems().add("Elf");
-        raceChoice.getItems().add("Halfling");
-        raceChoice.getItems().add("Human");
-        raceChoice.getItems().add("Dragonborn");
-        raceChoice.getItems().add("Gnome");
-        raceChoice.getItems().add("Half-Elf");
-        raceChoice.getItems().add("Half-Orc");
+//        raceChoice.getItems().add("Random");
+        raceChoice.getItems().add("Hill Dwarf");
+//        raceChoice.getItems().add("Elf");
+//        raceChoice.getItems().add("Halfling");
+//        raceChoice.getItems().add("Human");
+//        raceChoice.getItems().add("Dragonborn");
+//        raceChoice.getItems().add("Gnome");
+//        raceChoice.getItems().add("Half-Elf");
+//        raceChoice.getItems().add("Half-Orc");
         raceChoice.getItems().add("Tiefling");
         
-        classChoice.getItems().add("Random");
-        classChoice.getItems().add("Barbarian");
-        classChoice.getItems().add("Bard");
-        classChoice.getItems().add("Cleric");
-        classChoice.getItems().add("Druid");
+//        classChoice.getItems().add("Random");
+//        classChoice.getItems().add("Barbarian");
+//        classChoice.getItems().add("Bard");
+//        classChoice.getItems().add("Cleric");
+//        classChoice.getItems().add("Druid");
         classChoice.getItems().add("Fighter");
-        classChoice.getItems().add("Monk");
-        classChoice.getItems().add("Paladin");
-        classChoice.getItems().add("Ranger");
+//        classChoice.getItems().add("Monk");
+//        classChoice.getItems().add("Paladin");
+//        classChoice.getItems().add("Ranger");
         classChoice.getItems().add("Rogue");
-        classChoice.getItems().add("Sorcerer");
-        classChoice.getItems().add("Warlock");
-        classChoice.getItems().add("Wizard");
+//        classChoice.getItems().add("Sorcerer");
+//        classChoice.getItems().add("Warlock");
+//        classChoice.getItems().add("Wizard");
         
-        alignmentChoice.getItems().add("Random");
+//        alignmentChoice.getItems().add("Random");
         alignmentChoice.getItems().add("Lawful Good");
         alignmentChoice.getItems().add("Neutral Good");
         alignmentChoice.getItems().add("Chaotic Good");
@@ -87,20 +89,22 @@ public class CSG5eUi extends Application {
         alignmentChoice.getItems().add("Neutral Evil");
         alignmentChoice.getItems().add("Chaotic Evil");
         
-        backgroundChoice.getItems().add("Random");
+//        backgroundChoice.getItems().add("Random");
         backgroundChoice.getItems().add("Acolyte");
         backgroundChoice.getItems().add("Charlatan");
-        backgroundChoice.getItems().add("Criminal");
-        backgroundChoice.getItems().add("Entertainer");
-        backgroundChoice.getItems().add("Folk Hero");
-        backgroundChoice.getItems().add("Guild Artisan");
-        backgroundChoice.getItems().add("Hermit");
-        backgroundChoice.getItems().add("Noble");
-        backgroundChoice.getItems().add("Outlander");
-        backgroundChoice.getItems().add("Sage");
-        backgroundChoice.getItems().add("Sailor");
-        backgroundChoice.getItems().add("Soldier");
-        backgroundChoice.getItems().add("Urchin");
+//        backgroundChoice.getItems().add("Criminal");
+//        backgroundChoice.getItems().add("Entertainer");
+//        backgroundChoice.getItems().add("Folk Hero");
+//        backgroundChoice.getItems().add("Guild Artisan");
+//        backgroundChoice.getItems().add("Hermit");
+//        backgroundChoice.getItems().add("Noble");
+//        backgroundChoice.getItems().add("Outlander");
+//        backgroundChoice.getItems().add("Sage");
+//        backgroundChoice.getItems().add("Sailor");
+//        backgroundChoice.getItems().add("Soldier");
+//        backgroundChoice.getItems().add("Urchin");
+
+        Label sheetNameLabel = new Label("");
         
         Button generateButton = new Button("Generate!");
         
@@ -122,11 +126,15 @@ public class CSG5eUi extends Application {
         
         startLayout.setCenter(content);
         
-        generateButton.setOnMouseClicked((event) -> {
+        generateButton.setOnAction((event) -> {
+            //this.characterSheet.generateSheet((String) raceChoice.getValue(),(String) classChoice.getValue(),(String) backgroundChoice.getValue(),(String) alignmentChoice.getValue());
+            sheetNameLabel.setText(nameField.getText());
             window.setScene(sheetScene);
         });
         
         startScene = new Scene(startLayout);
+        //The method call below is temporary. it will be connected to the "Generate!" button once I figure out how to get it to work...
+        this.characterSheet.generateSheet(null, null, null, null);
         
         // character sheet scene
         
@@ -152,12 +160,10 @@ public class CSG5eUi extends Application {
         fullView.getChildren().add(fullSheet);
         fullView.getChildren().add(buttons);
         
-        //placeholders will be replaced by strings taken from the class CharacterSheet once it's functional.
-        Label sheetClassLabel = new Label("(Class)" + " 1");
-        Label sheetBackgroundLabel = new Label("(Background)");
-        Label sheetRaceLabel = new Label("(Race)");
-        Label sheetAlignmentLabel = new Label("(Alignment)");
-        Label sheetNameLabel = new Label(nameField.getText());
+        Label sheetClassLabel = new Label(this.characterSheet.getCClass().getName() + " 1");
+        Label sheetBackgroundLabel = new Label(this.characterSheet.getBackground().getName());
+        Label sheetRaceLabel = new Label(this.characterSheet.getRace().getName());
+        Label sheetAlignmentLabel = new Label(this.characterSheet.getAlignment());
         
         sheetTopField1.getChildren().add(sheetClassLabel);
         sheetTopField1.getChildren().add(sheetBackgroundLabel);
@@ -228,13 +234,66 @@ public class CSG5eUi extends Application {
         sheetColumn1.getChildren().add(chaModLabel);
         sheetColumn1.getChildren().add(chaScoreLabel);
         
+        //Saves and skills are completely messed up...
         Label proficiencyBonusLabel = new Label("Proficiency Bonus: 2");
         Label savingThrowsLabel = new Label("Saving Throws: ");
+        Label savingThrows = new Label(this.characterSheet.getSkillMarkers().get(0) + " " + this.characterSheet.getSavesAndSkills().get(0) + " Strength\n" + this.characterSheet.getSkillMarkers().get(1) + " " + this.characterSheet.getSavesAndSkills().get(1) + " Dexterity\n" + this.characterSheet.getSkillMarkers().get(2) + " " + this.characterSheet.getSavesAndSkills().get(2) + " Constitution\n" + this.characterSheet.getSkillMarkers().get(3) + " " + this.characterSheet.getSavesAndSkills().get(3) + " Intelligence\n" + this.characterSheet.getSkillMarkers().get(4) + " " + this.characterSheet.getSavesAndSkills().get(4) + " Wisdom\n" + this.characterSheet.getSkillMarkers().get(5) + " " + this.characterSheet.getSavesAndSkills().get(5) + " Charisma");
         Label skillsLabel = new Label("Skills: ");
+        Label skills = new Label(this.characterSheet.getSkillMarkers().get(6) + " " + this.characterSheet.getSavesAndSkills().get(6) + " Acrobatics (Dex)\n" + this.characterSheet.getSkillMarkers().get(7) + " " + this.characterSheet.getSavesAndSkills().get(7) + " Animal Handling (Wis)\n" + this.characterSheet.getSkillMarkers().get(8) + " " + this.characterSheet.getSavesAndSkills().get(8) + " Arcana (Int)\n" + this.characterSheet.getSkillMarkers().get(9) + " " + this.characterSheet.getSavesAndSkills().get(9) + " Athletics (Str)\n" + this.characterSheet.getSkillMarkers().get(10) + " " + this.characterSheet.getSavesAndSkills().get(10) + " Deception (Cha)\n" + this.characterSheet.getSkillMarkers().get(11) + " " + this.characterSheet.getSavesAndSkills().get(11) + " History (Int)\n" + this.characterSheet.getSkillMarkers().get(12) + " " + this.characterSheet.getSavesAndSkills().get(12) + " Insight (Wis)\n" + this.characterSheet.getSkillMarkers().get(13) + " " + this.characterSheet.getSavesAndSkills().get(13) + " Intimidation (Cha)\n" + this.characterSheet.getSkillMarkers().get(14) + " " + this.characterSheet.getSavesAndSkills().get(14) + " Investigation (Int)\n" + this.characterSheet.getSkillMarkers().get(15) + " " + this.characterSheet.getSavesAndSkills().get(15) + " Medicine (Wis)\n" + this.characterSheet.getSkillMarkers().get(16) + " " + this.characterSheet.getSavesAndSkills().get(16) + " Nature (Int)\n" + this.characterSheet.getSkillMarkers().get(17) + " " + this.characterSheet.getSavesAndSkills().get(17) + " Perception (Wis)\n" + this.characterSheet.getSkillMarkers().get(18) + " " + this.characterSheet.getSavesAndSkills().get(18) + " Performance (Cha)\n" + this.characterSheet.getSkillMarkers().get(19) + " " + this.characterSheet.getSavesAndSkills().get(19) + " Persuasion (Cha)\n" + this.characterSheet.getSkillMarkers().get(20) + " " + this.characterSheet.getSavesAndSkills().get(20) + " Religion (Int)\n" + this.characterSheet.getSkillMarkers().get(21) + " " + this.characterSheet.getSavesAndSkills().get(21) + " Sleight of Hand (Dex)\n" + this.characterSheet.getSkillMarkers().get(22) + " " + this.characterSheet.getSavesAndSkills().get(22) + " Stealth (Dex)\n" + this.characterSheet.getSkillMarkers().get(23) + " " + this.characterSheet.getSavesAndSkills().get(23) + " Survival (Wis)");
+        Label proficienciesLabel = new Label("Proficiencies: ");
+        Text proficienciesText = new Text(this.characterSheet.getProficiencies());
+        proficienciesText.setWrappingWidth(150);
         
         sheetColumn2.getChildren().add(proficiencyBonusLabel);
         sheetColumn2.getChildren().add(savingThrowsLabel);
+        sheetColumn2.getChildren().add(savingThrows);
         sheetColumn2.getChildren().add(skillsLabel);
+        sheetColumn2.getChildren().add(skills);
+        sheetColumn2.getChildren().add(proficienciesLabel);
+        sheetColumn2.getChildren().add(proficienciesText);
+//        sheetColumn2.getChildren().add(new Label(this.characterSheet.getAbilityScoreModifiers().toString()));
+        
+        Label armorClass = new Label("Armor Class: ");
+        Label intitiative = new Label("Intitiative: " + (2 + this.characterSheet.getAbilityScoreModifiers().get(1)));
+        Label speed = new Label("Speed: " + this.characterSheet.getRace().getSpeed());
+        Label hitPoints = new Label("Hit Points: " + (this.characterSheet.getCClass().getHitdie() + this.characterSheet.getAbilityScoreModifiers().get(2)));
+        Label hitDice = new Label("Hit Dice: 1d" + this.characterSheet.getCClass().getHitdie());
+        Label equipmentLabel = new Label("Equipment: ");
+        Text equipmentText = new Text(this.characterSheet.getEquipment());
+        equipmentText.setWrappingWidth(150);
+        Label currencyLabel = new Label("CP: \nSP: \nGP: " + this.characterSheet.getBackground().getGP() + "\nEP: \nPP: ");
+        
+        sheetColumn3.getChildren().add(armorClass);
+        sheetColumn3.getChildren().add(intitiative);
+        sheetColumn3.getChildren().add(speed);
+        sheetColumn3.getChildren().add(hitPoints);
+        sheetColumn3.getChildren().add(hitDice);
+        sheetColumn3.getChildren().add(equipmentLabel);
+        sheetColumn3.getChildren().add(equipmentText);
+        sheetColumn3.getChildren().add(currencyLabel);
+        
+        Label personalityTraits = new Label("Personality Traits: ");
+        Label ideals = new Label("Ideals: ");
+        Label bonds = new Label("Bonds: ");
+        Label flaws = new Label("Flaws: ");
+        Label featuresTraits = new Label("Features & Traits: ");
+        Text personalityTraitsText = new Text("");
+        Text idealsText = new Text("");
+        Text bondsText = new Text("");
+        Text flawsText = new Text("");
+        Text featuresTraitsText = new Text(this.characterSheet.getTraitsAndFeatures());
+        featuresTraitsText.setWrappingWidth(400);
+        
+        sheetColumn4.getChildren().add(personalityTraits);
+        sheetColumn4.getChildren().add(personalityTraitsText);
+        sheetColumn4.getChildren().add(ideals);
+        sheetColumn4.getChildren().add(idealsText);
+        sheetColumn4.getChildren().add(bonds);
+        sheetColumn4.getChildren().add(bondsText);
+        sheetColumn4.getChildren().add(flaws);
+        sheetColumn4.getChildren().add(flawsText);
+        sheetColumn4.getChildren().add(featuresTraits);
+        sheetColumn4.getChildren().add(featuresTraitsText);
         
         Button backButton = new Button("Back");
         Button generateAgainButton = new Button("Generate!");

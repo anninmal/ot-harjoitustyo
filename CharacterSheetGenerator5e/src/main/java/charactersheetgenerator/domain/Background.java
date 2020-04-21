@@ -19,6 +19,13 @@ public class Background {
     public Background(String name, Integer gp) {
         this.name = name;
         this.gp = gp;
+        this.proficiencylist = new ArrayList<>();
+        this.equipmentlist = new ArrayList<>();
+        this.skillist = new ArrayList<>();
+        this.personalitylist = new ArrayList<>();
+        this.ideallist = new ArrayList<>();
+        this.bondlist = new ArrayList<>();
+        this.flawlist = new ArrayList<>();
     }
     
     public void addProficiency(String proficiency) {
@@ -35,6 +42,14 @@ public class Background {
     
     public void setFeature(String feature) {
         this.feature = feature;
+    }
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public Integer getGP() {
+        return this.gp;
     }
     
     public List<String> getProficiencies() {

@@ -6,15 +6,19 @@ import java.util.List;
 public class CharacterClass {
     
     private String name;
-    private String hitdie;
+    private Integer hitdie;
+    private Integer skillNumber;
+    private List<String> savingthrowlist;
     private List<String> proficiencylist;
     private List<String> equipmentlist;
     private List<String> skillist;
     private List<String> featurelist;
     
-    public CharacterClass(String name, String hitdie) {
+    public CharacterClass(String name, Integer hitdie, Integer skillNumber) {
         this.name = name;
         this.hitdie = hitdie;
+        this.skillNumber = skillNumber;
+        this.savingthrowlist = new ArrayList<>();
         this.proficiencylist = new ArrayList<>();
         this.equipmentlist = new ArrayList<>();
         this.skillist = new ArrayList<>();
@@ -25,8 +29,16 @@ public class CharacterClass {
         return this.name;
     }
     
-    public String getHitdie() {
+    public Integer getHitdie() {
         return this.hitdie;
+    }
+    
+    public Integer getSkillNumber() {
+        return this.skillNumber;
+    }
+    
+    public void addSavingThrow(String save) {
+        this.savingthrowlist.add(save);
     }
     
     public void addProficiency(String proficiency) {
@@ -43,6 +55,10 @@ public class CharacterClass {
     
     public void addFeature(String feature) {
         this.featurelist.add(feature);
+    }
+    
+    public List<String> getSavingThrows() {
+        return this.savingthrowlist;
     }
     
     public List<String> getProficiencies() {
