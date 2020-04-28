@@ -252,9 +252,7 @@ public class CharacterSheet {
      * with the smallest number removed and the remaining 3 added together, and stores the numbers in a list variable.
      */
     public void generateAbilityScores() {
-        if (this.abilityScores != null) {
-            this.abilityScores.clear();
-        }
+        this.abilityScores.clear();
         int score = 0;
         int ind = 1;
         List<Integer> rolls = new ArrayList<>();
@@ -299,9 +297,7 @@ public class CharacterSheet {
      * and stores them in a list variable.
      */
     public void generateAbilityScoreModifiers() {
-        if (this.abilityScoreModifiers != null) {
-            this.abilityScoreModifiers.clear();
-        }
+        this.abilityScoreModifiers.clear();
         for (int as: this.abilityScores) {
             if (as == 4 || as == 5) {
                 this.abilityScoreModifiers.add(-3);

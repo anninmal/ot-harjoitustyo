@@ -196,4 +196,27 @@ public class CharacterSheetTest {
         assertEquals("[]", sheet.getAbilityScores().toString());
         assertEquals("[]", sheet.getAbilityScoreModifiers().toString());
     }
+    
+    @Test
+    public void getEquipmentReturnsStringOfEquipment() {
+        sheet.setUpSheet();
+        sheet.generateSheet(null, null, null, null);
+        sheet.assignEquipment();
+        assertTrue("Method should return a string, which contains commas.", sheet.getEquipment().contains(","));
+    }
+    
+    @Test
+    public void getProficienciesReturnsStringOfProficiencies() {
+        sheet.setUpSheet();
+        sheet.generateSheet(null, null, null, null);
+        sheet.assignProficiencies();
+        assertTrue("Method should return a string, which contains commas.", sheet.getProficiencies().contains(","));
+    }
+    @Test
+    public void getTraitsAndFeaturesReturnsStringOfTraitsAndFeatures() {
+        sheet.setUpSheet();
+        sheet.generateSheet(null, null, null, null);
+        sheet.assignEquipment();
+        assertTrue("Method should return a string, which contains line breaks.", sheet.getTraitsAndFeatures().contains("\n"));
+    }
 }
