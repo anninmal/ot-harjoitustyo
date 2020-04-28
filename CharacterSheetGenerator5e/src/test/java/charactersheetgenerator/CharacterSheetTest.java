@@ -20,21 +20,24 @@ public class CharacterSheetTest {
     public void createRacesCreatesRaces() {
         sheet.createRaces();
         assertEquals("Hill Dwarf", sheet.getRaces().get(0).getName());
-        assertTrue("There should be races on the race list.", sheet.getRaces() != null);
+        assertTrue("Race list should not be null.", sheet.getRaces() != null);
+        assertTrue("Race list should not be empty.", sheet.getRaces().size() > 0);
     }
     
     @Test
     public void createClassesCreatesClasses() {
         sheet.createClasses();
         assertEquals("Fighter", sheet.getClasses().get(0).getName());
-        assertTrue("There should be classes on the class list.", sheet.getClasses() != null);
+        assertTrue("Class list should not be null.", sheet.getClasses() != null);
+        assertTrue("Class list should not be empty.", sheet.getClasses().size() > 0);
     }
     
     @Test
     public void createBackgroundsCreatesBackgrounds() {
         sheet.createBackgrounds();
         assertEquals("Acolyte", sheet.getBackgrounds().get(0).getName());
-        assertTrue("There should be backgrounds on the backgrounds list.", sheet.getBackgrounds() != null);
+        assertTrue("Backgrounds list should not be null.", sheet.getBackgrounds() != null);
+        assertTrue("Backgrounds list should not be empty.", sheet.getBackgrounds().size() > 0);
     }
     
     @Test
@@ -126,24 +129,28 @@ public class CharacterSheetTest {
     
     @Test
     public void generateCharacterSheetPicksRace() {
+        sheet.setUpSheet();
         sheet.generateSheet(null, null, null, null);
         assertTrue("Race should be picked.", sheet.getRace() != null);
     }
     
     @Test
     public void generateCharacterSheetPicksClass() {
+        sheet.setUpSheet();
         sheet.generateSheet(null, null, null, null);
         assertTrue("Class should be picked.", sheet.getCClass() != null);
     }
     
     @Test
     public void generateCharacterSheetPicksBackground() {
+        sheet.setUpSheet();
         sheet.generateSheet(null, null, null, null);
         assertTrue("Background should be picked.", sheet.getBackground() != null);
     }
     
     @Test
     public void generateCharacterSheetPicksAlignment() {
+        sheet.setUpSheet();
         sheet.generateSheet(null, null, null, null);
         assertTrue("Alignment should be picked.", sheet.getAlignment() != null);
     }

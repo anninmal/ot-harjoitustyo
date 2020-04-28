@@ -1,0 +1,23 @@
+NAMFighter
+HID10
+SKN2
+SVTStrength
+SVTConstitution
+PROall armor
+PROshields
+PROsimple weapons
+PROmartial weapons
+EQUchain mail OR leather armor + longbow + 20 arrows
+EQUmartial weapon + shield OR two martial weapons
+EQUlight crossbow + 20 bolts OR two handaxes
+EQUdungeoneer's pack OR exporer's pack
+SKIAcrobatics
+SKIAnimal Handling
+SKIAthletics
+SKIHistory
+SKIInsight
+SKIIntimidation
+SKIPerception
+SKISurvival
+FEA[Fighting Style] You adopt a particular style of fighting as your specialty. Choose a Fighting Style from the list of optional features. You can't take the same Fighting Style option more than once, even if you get to choose again.
+FEA[Second Wind] You have a limited well of stamina that you can draw on to protect yourself from harm. On Your Turn, you can use a Bonus Action to regain Hit Points equal to 1d10 + your Fighter level. Once you use this feature, you must finish a short or Long Rest before you can use it again.

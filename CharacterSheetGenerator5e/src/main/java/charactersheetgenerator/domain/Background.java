@@ -28,6 +28,24 @@ public class Background {
         this.flawlist = new ArrayList<>();
     }
     
+    public Background() {
+        this.proficiencylist = new ArrayList<>();
+        this.equipmentlist = new ArrayList<>();
+        this.skillist = new ArrayList<>();
+        this.personalitylist = new ArrayList<>();
+        this.ideallist = new ArrayList<>();
+        this.bondlist = new ArrayList<>();
+        this.flawlist = new ArrayList<>();
+    }
+    
+    public void addName(String name) {
+        this.name = name;
+    }
+    
+    public void addGP(Integer gp) {
+        this.gp = gp;
+    }
+    
     public void addProficiency(String proficiency) {
         this.proficiencylist.add(proficiency);
     }
@@ -42,6 +60,22 @@ public class Background {
     
     public void setFeature(String feature) {
         this.feature = feature;
+    }
+    
+    public void addPersonalityTrait(String personalitytrait) {
+        this.personalitylist.add(personalitytrait);
+    }
+    
+    public void addIdeal(String ideal) {
+        this.ideallist.add(ideal);
+    }
+    
+    public void addBond(String bond) {
+        this.bondlist.add(bond);
+    }
+    
+    public void addFlaw(String flaw) {
+        this.flawlist.add(flaw);
     }
     
     public String getName() {

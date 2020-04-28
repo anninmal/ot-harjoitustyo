@@ -17,8 +17,21 @@ public class Race {
         this.proficiencylist = new ArrayList<>();
     }
     
+    public Race() {
+        this.traitlist = new ArrayList<>();
+        this.proficiencylist = new ArrayList<>();
+    }
+    
+    public void addName(String name) {
+        this.name = name;
+    }
+    
     public String getName() {
         return this.name;
+    }
+    
+    public void addSpeed(Integer speed) {
+        this.speed = speed;
     }
     
     public int getSpeed() {

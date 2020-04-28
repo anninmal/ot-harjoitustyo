@@ -25,12 +25,32 @@ public class CharacterClass {
         this.featurelist = new ArrayList<>();
     }
     
+    public CharacterClass() {
+        this.savingthrowlist = new ArrayList<>();
+        this.proficiencylist = new ArrayList<>();
+        this.equipmentlist = new ArrayList<>();
+        this.skillist = new ArrayList<>();
+        this.featurelist = new ArrayList<>();
+    }
+    
+    public void addName(String name) {
+        this.name = name;
+    }
+    
     public String getName() {
         return this.name;
     }
     
+    public void addHitdie(Integer hitdie) {
+        this.hitdie = hitdie;
+    }
+    
     public Integer getHitdie() {
         return this.hitdie;
+    }
+    
+    public void addSkillNumber(Integer skillnumber) {
+        this.skillNumber = skillnumber;
     }
     
     public Integer getSkillNumber() {
