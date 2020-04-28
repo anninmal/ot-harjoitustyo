@@ -15,6 +15,7 @@ Sovelluken avulla voidaan luoda satunnaistettu Dungeons & Dragons 5e hahmolomake
 ### Releaset
 
 [Viikko 5](https://github.com/anninmal/ot-harjoitustyo/releases/tag/viikko5)
+[Viikko 6](https://github.com/anninmal/ot-harjoitustyo/releases/tag/viikko6)
 
 ### Komentorivitoimintojen ohjeet
 
