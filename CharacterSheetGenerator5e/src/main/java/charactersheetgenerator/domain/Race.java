@@ -3,19 +3,16 @@ package charactersheetgenerator.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class which represents a player character's race, and stores information related to the race.
+ */
+
 public class Race {
 
     private String name;
     private Integer speed;
     private List<String> traitlist;
     private List<String> proficiencylist;
-    
-    public Race(String name, Integer speed) {
-        this.name = name;
-        this.speed = speed;
-        this.traitlist = new ArrayList<>();
-        this.proficiencylist = new ArrayList<>();
-    }
     
     public Race() {
         this.traitlist = new ArrayList<>();

@@ -5,6 +5,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Class responsible for storing, creating, and processing information related to the player character.
+ */
+
 public class CharacterSheet {
     
     private Random random;
@@ -43,6 +47,9 @@ public class CharacterSheet {
         this.spells = new ArrayList<>();
     }
     
+    /**
+    * Initial setup which stores the needed information for race, class, background, and alignment.
+    */
     public void setUpSheet() {
         createRaces();
         createClasses();
@@ -50,6 +57,14 @@ public class CharacterSheet {
         createAlignments();
     }
     
+    /**
+     * Calls methods which randomize and pick the necessary information for the player character.
+     * 
+     * @param   race   Name of desired race
+     * @param   cclass   Name of desired class
+     * @param   background   Name of desired background
+     * @param   alignment   Name of desired alignment
+     */
     public void generateSheet(String race, String cclass, String background, String alignment) {
         pickRace(race);
         pickClass(cclass);
@@ -64,6 +79,9 @@ public class CharacterSheet {
         assignSavesAndSkills();
     }
     
+    /**
+     * Method calls for the race files to be read and stores the created instances in a list.
+     */
     public void createRaces() {
         String[] races = {"/races/hilldwarf.txt", "/races/mountaindwarf.txt", "/races/tiefling.txt"};
         for (int i = 0; i < races.length; i++) {
@@ -79,6 +97,9 @@ public class CharacterSheet {
         return this.race;
     }
     
+    /**
+     * Method calls for the class files to be read and stores the created instances in a list.
+     */
     public void createClasses() {
         String[] classes = {"/classes/fighter.txt", "/classes/rogue.txt"};
         for (int i = 0; i < classes.length; i++) {
@@ -94,6 +115,9 @@ public class CharacterSheet {
         return this.cclass;
     }
     
+    /**
+     * Method calls for the background files to be read and stores the created instances in a list.
+     */
     public void createBackgrounds() {
         String[] bgs = {"/backgrounds/acolyte.txt", "/backgrounds/charlatan.txt", "/backgrounds/criminal.txt", "/backgrounds/entertainer.txt"};
         for (int i = 0; i < bgs.length; i++) {
@@ -109,6 +133,9 @@ public class CharacterSheet {
         return this.background;
     }
     
+    /**
+     * Method creates a list of alignments.
+     */
     public void createAlignments() {
         String[] alignments = {"Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"};
         for (int i = 0; i < 9; i++) {
@@ -124,6 +151,11 @@ public class CharacterSheet {
         return this.alignment;
     }
     
+    /**
+     * Method sets the race in accordance with the name given, or picks race randomly if parameter is null.
+     * 
+     * @param   race   Name of desired race
+     */
     public void pickRace(String race) {
         this.race = null;
         if (!this.raceList.isEmpty()) {
@@ -140,6 +172,11 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method sets the class in accordance with the name given, or picks class randomly if parameter is null.
+     * 
+     * @param   cclass   Name of desired class
+     */
     public void pickClass(String cclass) {
         this.cclass = null;
         if (!this.cclassList.isEmpty()) {
@@ -156,6 +193,11 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method sets the background in accordance with the name given, or picks background randomly if parameter is null.
+     * 
+     * @param   background   Name of desired background
+     */
     public void pickBackground(String background) {
         this.background = null;
         if (!this.backgroundList.isEmpty()) {
@@ -172,6 +214,11 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method sets the alignment in accordance with the name given, or picks alignment randomly if parameter is null.
+     * 
+     * @param   alignment   Name of desired alignment
+     */
     public void pickAlignment(String alignment) {
         this.alignment = null;
         if (!this.alignmentList.isEmpty()) {
@@ -184,6 +231,13 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method returns random characteristic from given list.
+     * 
+     * @param   characteristics   List of characteristics
+     * 
+     * @return randomly chosen characteristic
+     */
     public String getRandomCharacteristic(List<String> characteristics) {
         String characteristic = "";
         if (!characteristics.isEmpty()) {
@@ -193,6 +247,10 @@ public class CharacterSheet {
         return characteristic;
     }
     
+    /**
+     * Method generates 6 random ability scores based on 4 randomly generated numbers from 1 to 6,
+     * with the smallest number removed and the remaining 3 added together, and stores the numbers in a list variable.
+     */
     public void generateAbilityScores() {
         if (this.abilityScores != null) {
             this.abilityScores.clear();
@@ -218,6 +276,9 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method applies the appropriate ability score bonuses for each race.
+     */
     public void applyRacialBonuses() {
         if (!this.raceList.isEmpty()) {
             if (this.race.getName().equals("Hill Dwarf")) {
@@ -233,6 +294,10 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method generates appropriate ability score modifiers based on previously generated ability scores,
+     * and stores them in a list variable.
+     */
     public void generateAbilityScoreModifiers() {
         if (this.abilityScoreModifiers != null) {
             this.abilityScoreModifiers.clear();
@@ -273,6 +338,9 @@ public class CharacterSheet {
         this.abilityScoreModifiers.clear();
     }
     
+    /**
+     * Method gets equipment from both class and background and stores them in one list.
+     */
     public void assignEquipment() {
         this.equipment.clear();
         for (String ce: this.cclass.getEquipment()) {
@@ -283,6 +351,11 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method returns a string of the character's equipment, with appropriate comma placement.
+     * 
+     * @return String of the character's equipment
+     */
     public String getEquipment() {
         String equipment = "";
         for (int i = 0; i < this.equipment.size(); i++) {
@@ -295,6 +368,9 @@ public class CharacterSheet {
         return equipment;
     }
     
+    /**
+     * Method gets equipment from background, class and race, and stores them in one list.
+     */
     public void assignProficiencies() {
         this.proficiencies.clear();
         for (String bgp: this.background.getProficiencies()) {
@@ -308,6 +384,11 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method returns a string of the character's proficiencies, with appropriate comma placement.
+     * 
+     * @return String of the character's proficiencies
+     */
     public String getProficiencies() {
         String proficiencies = "";
         for (int i = 0; i < this.proficiencies.size(); i++) {
@@ -320,6 +401,11 @@ public class CharacterSheet {
         return proficiencies;
     }
         
+    /**
+     * Method returns a string of the character's traits and features, with appropriate comma spacing.
+     * 
+     * @return String of the character's traits and features
+     */
     public String getTraitsAndFeatures() {
         String features = "";
         for (String f: this.race.getTraits()) {
@@ -332,6 +418,10 @@ public class CharacterSheet {
         return features;
     }
     
+    /**
+     * Creates a list of visual markers detailing which saving throws and skills a character is proficient in,
+     * based on the character's background and class.
+     */
     public void assignSkillMarkers() {
         this.skillMarkers.clear();
         for (int i = 0; i < 24; i++) {
@@ -456,6 +546,11 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method reads the list of markers detailing which saving throws and skills a character is proficient in,
+     * and creates a list of the numerical values of the saving throws and skills,
+     * with proficiency bonus added to the values with a corresponding proficiency marker.
+     */
     public void assignSavesAndSkills() {
         this.savesAndSkills.clear();
         if (this.skillMarkers.get(0).equals("o")) {

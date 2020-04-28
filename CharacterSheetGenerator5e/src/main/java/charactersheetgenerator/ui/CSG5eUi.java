@@ -16,6 +16,10 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * User interface class.
+ */
+
 public class CSG5eUi extends Application {
     private Scene startScene;
     private Scene sheetScene;

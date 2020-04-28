@@ -3,6 +3,10 @@ package charactersheetgenerator.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class which represents a player character's background, and stores information related to the background.
+ */
+
 public class Background {
     
     private String name;
@@ -15,18 +19,6 @@ public class Background {
     private List<String> ideallist;
     private List<String> bondlist;
     private List<String> flawlist;
-    
-    public Background(String name, Integer gp) {
-        this.name = name;
-        this.gp = gp;
-        this.proficiencylist = new ArrayList<>();
-        this.equipmentlist = new ArrayList<>();
-        this.skillist = new ArrayList<>();
-        this.personalitylist = new ArrayList<>();
-        this.ideallist = new ArrayList<>();
-        this.bondlist = new ArrayList<>();
-        this.flawlist = new ArrayList<>();
-    }
     
     public Background() {
         this.proficiencylist = new ArrayList<>();

@@ -3,6 +3,10 @@ package charactersheetgenerator.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class which represents a player character's class, and stores information related to the class.
+ */
+
 public class CharacterClass {
     
     private String name;
@@ -13,17 +17,6 @@ public class CharacterClass {
     private List<String> equipmentlist;
     private List<String> skillist;
     private List<String> featurelist;
-    
-    public CharacterClass(String name, Integer hitdie, Integer skillNumber) {
-        this.name = name;
-        this.hitdie = hitdie;
-        this.skillNumber = skillNumber;
-        this.savingthrowlist = new ArrayList<>();
-        this.proficiencylist = new ArrayList<>();
-        this.equipmentlist = new ArrayList<>();
-        this.skillist = new ArrayList<>();
-        this.featurelist = new ArrayList<>();
-    }
     
     public CharacterClass() {
         this.savingthrowlist = new ArrayList<>();

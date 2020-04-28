@@ -2,8 +2,19 @@ package charactersheetgenerator.domain;
 
 import java.util.Scanner;
 
+/**
+ * Class responsible for reading necessary files and creating instances based on the information read.
+ */
+
 public class FileReader {
     
+    /**
+     * Method reads a race file and inserts the information it contains into a Race instance.
+     * 
+     * @param   file   File name
+     * 
+     * @return Race instance containing appropriate information
+     */
     public Race loadRace(String file) {
         Race race = new Race();
         try (Scanner scanner = new Scanner(getClass().getResourceAsStream(file))) {
@@ -24,6 +35,13 @@ public class FileReader {
         return race;
     }
     
+    /**
+     * Method reads a class file and inserts the information it contains into a CharacterClass instance.
+     * 
+     * @param   file   File name
+     * 
+     * @return CharacterClass instance containing appropriate information
+     */
     public CharacterClass loadClass(String file) {
         CharacterClass cclass = new CharacterClass();
         try (Scanner scanner = new Scanner(getClass().getResourceAsStream(file))) {
@@ -52,6 +70,13 @@ public class FileReader {
         return cclass;
     }
     
+    /**
+     * Method reads a background file and inserts the information it contains into a Background instance.
+     * 
+     * @param   file   File name
+     * 
+     * @return Background instance containing appropriate information
+     */
     public Background loadBackground(String file) {
         Background background = new Background();
         try (Scanner scanner = new Scanner(getClass().getResourceAsStream(file))) {
