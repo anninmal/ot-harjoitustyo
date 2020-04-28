@@ -42,3 +42,4 @@ Checkstyle:
 ```
  mvn jxr:jxr checkstyle:checkstyle
 ```
+(Checkstyle-raportti löytyy tiedostosta target/site/checkstyle.html)
