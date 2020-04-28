@@ -241,8 +241,8 @@ public class CharacterSheet {
     public String getRandomCharacteristic(List<String> characteristics) {
         String characteristic = "";
         if (!characteristics.isEmpty()) {
-        int ind = this.random.nextInt(characteristics.size());
-        characteristic = characteristics.get(ind);
+            int ind = this.random.nextInt(characteristics.size());
+            characteristic = characteristics.get(ind);
         }
         return characteristic;
     }

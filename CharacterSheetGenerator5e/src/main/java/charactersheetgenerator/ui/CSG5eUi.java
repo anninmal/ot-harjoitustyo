@@ -219,22 +219,22 @@ public class CSG5eUi extends Application {
         ChoiceBox backgroundChoice = new ChoiceBox();
         
         raceChoice.getItems().add(null);
-        this.characterSheet.getRaces().forEach(race->{
+        this.characterSheet.getRaces().forEach(race-> {
             raceChoice.getItems().add(race.getName());
         }); 
         
         classChoice.getItems().add(null);
-        this.characterSheet.getClasses().forEach(cclass->{
+        this.characterSheet.getClasses().forEach(cclass-> {
             classChoice.getItems().add(cclass.getName());
         }); 
         
         alignmentChoice.getItems().add(null);
-        this.characterSheet.getAlignments().forEach(alignment->{
+        this.characterSheet.getAlignments().forEach(alignment-> {
             alignmentChoice.getItems().add(alignment);
         }); 
         
         backgroundChoice.getItems().add(null);
-        this.characterSheet.getBackgrounds().forEach(background->{
+        this.characterSheet.getBackgrounds().forEach(background-> {
             backgroundChoice.getItems().add(background.getName());
         }); 
 
@@ -261,7 +261,7 @@ public class CSG5eUi extends Application {
         startLayout.setCenter(content);
         
         generateButton.setOnAction((event) -> {
-            this.characterSheet.generateSheet((String) raceChoice.getValue(),(String) classChoice.getValue(),(String) backgroundChoice.getValue(),(String) alignmentChoice.getValue());
+            this.characterSheet.generateSheet((String) raceChoice.getValue(), (String) classChoice.getValue(), (String) backgroundChoice.getValue(), (String) alignmentChoice.getValue());
             sheetNameLabel.setText(nameField.getText());
             redrawCharacterSheet();
             window.setScene(sheetScene);
@@ -294,7 +294,7 @@ public class CSG5eUi extends Application {
         });
         
         generateAgainButton.setOnAction((event) -> {
-            this.characterSheet.generateSheet((String) raceChoice.getValue(),(String) classChoice.getValue(),(String) backgroundChoice.getValue(),(String) alignmentChoice.getValue());
+            this.characterSheet.generateSheet((String) raceChoice.getValue(), (String) classChoice.getValue(), (String) backgroundChoice.getValue(), (String) alignmentChoice.getValue());
             redrawCharacterSheet();
         });
         
