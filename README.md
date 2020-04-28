@@ -4,6 +4,7 @@
 Sovelluken avulla voidaan luoda satunnaistettu Dungeons & Dragons 5e hahmolomake tason 1 hahmolle, noudattaen pelaajan käsikirjan (Player's Handbook) perusohjeita. Hahmolomake voidaan tallentaa tiedostolle.
 
 ### Dokumentointi
+[Käyttöohje](https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 [Vaatimusmäärittely](https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
