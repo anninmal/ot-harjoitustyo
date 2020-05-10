@@ -130,9 +130,9 @@ public class CharacterSheet {
                 int ind = this.random.nextInt(this.raceList.size());
                 this.race = this.raceList.get(ind);
             } else {
-                for (Race ra: this.raceList) {
-                    if (ra.getName().equals(race)) {
-                        this.race = ra;
+                for (Race r: this.raceList) {
+                    if (r.getName().equals(race)) {
+                        this.race = r;
                     }
                 }
             }
@@ -151,9 +151,9 @@ public class CharacterSheet {
                 int ind = this.random.nextInt(this.cclassList.size());
                 this.cclass = this.cclassList.get(ind);
             } else {
-                for (CharacterClass cc: this.cclassList) {
-                    if (cc.getName().equals(cclass)) {
-                        this.cclass = cc;
+                for (CharacterClass c: this.cclassList) {
+                    if (c.getName().equals(cclass)) {
+                        this.cclass = c;
                     }
                 }
             }
@@ -172,9 +172,9 @@ public class CharacterSheet {
                 int ind = this.random.nextInt(this.backgroundList.size());
                 this.background = this.backgroundList.get(ind);
             } else {
-                for (Background bg: this.backgroundList) {
-                    if (bg.getName().equals(background)) {
-                        this.background = bg;
+                for (Background b: this.backgroundList) {
+                    if (b.getName().equals(background)) {
+                        this.background = b;
                     }
                 }
             }
