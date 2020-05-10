@@ -26,10 +26,10 @@ Sovelluken avulla voidaan luoda satunnaistettu Dungeons & Dragons 5e hahmolomake
   - Tausta **(tehty)**
   - Persoonallisuus, ihanteet, siteet ja heikkoudet **(tehty)**
   - Varusteet **(tehty)**
-  - Loitsut
+  - Loitsut **(tehty)**
 - Käyttäjä voi palata aloitusnäkymään. **(tehty)**
 - Käyttäjä voi luoda uuden satunnaistetun lomakkeen samoilla asetuksilla. **(tehty)**
-- Käyttäjä voi tallentaa hahmolomakkeensa tiedostolle.
+- Käyttäjä voi tallentaa hahmolomakkeensa tiedostolle. **(tehty)**
 
 ## Jatkokehitysideoita
 
