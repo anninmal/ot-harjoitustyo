@@ -17,18 +17,19 @@ public class CharacterSheet {
     private CharacterClass cclass;
     private Background background;
     private String alignment;
-    private List<Integer> abilityScores;
-    private List<Integer> abilityScoreModifiers;
+    private List<Integer> abilityScoresList;
+    private List<Integer> abilityScoreModifiersList;
     private List<Race> raceList;
     private List<CharacterClass> cclassList;
     private List<Background> backgroundList;
     private List<String> alignmentList;
-    private List<Integer> savesAndSkills;
-    private List<String> equipment;
-    private List<String> proficiencies;
-    private List<String> features;
-    private List<String> skillMarkers;
-    private List<String> spells;
+    private List<Integer> savesAndSkillsList;
+    private List<String> equipmentList;
+    private List<String> proficiencyList;
+    private List<String> featureList;
+    private List<String> proficiencyMarkerList;
+    private List<String> spellList;
+    private List<String> cantripList;
     
     public CharacterSheet() {
         this.random = new Random();
@@ -36,25 +37,29 @@ public class CharacterSheet {
         this.raceList = new ArrayList<>();
         this.cclassList = new ArrayList<>();
         this.backgroundList = new ArrayList<>();
-        this.abilityScores = new ArrayList<>();
-        this.abilityScoreModifiers = new ArrayList<>();
+        this.abilityScoresList = new ArrayList<>();
+        this.abilityScoreModifiersList = new ArrayList<>();
         this.alignmentList = new ArrayList<>();
-        this.savesAndSkills = new ArrayList<>();
-        this.equipment = new ArrayList<>();
-        this.proficiencies = new ArrayList<>();
-        this.features = new ArrayList<>();
-        this.skillMarkers = new ArrayList<>();
-        this.spells = new ArrayList<>();
+        this.savesAndSkillsList = new ArrayList<>();
+        this.equipmentList = new ArrayList<>();
+        this.proficiencyList = new ArrayList<>();
+        this.featureList = new ArrayList<>();
+        this.proficiencyMarkerList = new ArrayList<>();
+        this.spellList = new ArrayList<>();
+        this.cantripList = new ArrayList<>();
     }
     
     /**
     * Initial setup which stores the needed information for race, class, background, and alignment.
     */
     public void setUpSheet() {
-        createRaces();
-        createClasses();
-        createBackgrounds();
-        createAlignments();
+        this.raceList = reader.loadRaces("/races/races.txt");
+        this.cclassList = reader.loadClasses("/classes/classes.txt");
+        this.backgroundList = reader.loadBackgrounds("/backgrounds/backgrounds.txt");
+        String[] alignments = {"Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"};
+        for (int i = 0; i < 9; i++) {
+            this.alignmentList.add(alignments[i]);
+        }
     }
     
     /**
@@ -77,14 +82,8 @@ public class CharacterSheet {
         assignProficiencies();
         assignProficiencyMarkers();
         assignSavesAndSkills();
-        assignSpells();
-    }
-    
-    /**
-     * Method calls for the race file to be read and stores the created instances in a list.
-     */
-    public void createRaces() {
-        this.raceList = reader.loadRaces("/races/races.txt");
+        assignSpells(this.cantripList, this.cclass.getCantripsKnown(), this.cclass.getCantrips());
+        assignSpells(this.spellList, this.cclass.getSpellsKnown(), this.cclass.getSpells());
     }
     
     public List<Race> getRaces() {
@@ -95,13 +94,6 @@ public class CharacterSheet {
         return this.race;
     }
     
-    /**
-     * Method calls for the class file to be read and stores the created instances in a list.
-     */
-    public void createClasses() {
-        this.cclassList = reader.loadClasses("/classes/classes.txt");
-    }
-    
     public List<CharacterClass> getClasses() {
         return this.cclassList;
     }
@@ -110,29 +102,12 @@ public class CharacterSheet {
         return this.cclass;
     }
     
-    /**
-     * Method calls for the background file to be read and stores the created instances in a list.
-     */
-    public void createBackgrounds() {
-        this.backgroundList = reader.loadBackgrounds("/backgrounds/backgrounds.txt");
-    }
-    
     public List<Background> getBackgrounds() {
         return this.backgroundList;
     }
     
     public Background getBackground() {
         return this.background;
-    }
-    
-    /**
-     * Method creates a list of alignments.
-     */
-    public void createAlignments() {
-        String[] alignments = {"Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"};
-        for (int i = 0; i < 9; i++) {
-            this.alignmentList.add(alignments[i]);
-        }
     }
     
     public List<String> getAlignments() {
@@ -243,7 +218,7 @@ public class CharacterSheet {
      * Method clears any existing ability scores, then rolls new ability scores.
      */
     public void generateAbilityScores() {
-        this.abilityScores.clear();
+        this.abilityScoresList.clear();
         List<Integer> rolls = new ArrayList<>();
         rollAbilityScores(rolls);
     }
@@ -257,7 +232,7 @@ public class CharacterSheet {
     public void rollAbilityScores(List<Integer> rolls) {
         int score = 0;
         int ind = 1;
-        while (this.abilityScores.size() < 6) {
+        while (this.abilityScoresList.size() < 6) {
             ind = 1;
             while (ind < 5) {
                 int roll = this.random.nextInt(6) + 1;
@@ -269,20 +244,20 @@ public class CharacterSheet {
             for (int roll: rolls) {
                 score = score + roll;
             }
-            this.abilityScores.add(score);
+            this.abilityScoresList.add(score);
             score = 0;
             rolls.clear();
         }
     }
     
     /**
-     * Method clears any existing ability scores, then assigns a default value of 10 to all ability scores,
+     * Method clears any existing ability scores, then assigns a default value to all ability scores,
      * method is intended for testing purposes.
      */
-    public void generateDefaultAbilityScores() {
-        this.abilityScores.clear();
+    public void generateDefaultAbilityScores(Integer score) {
+        this.abilityScoresList.clear();
         for (int i = 0; i < 6; i++) {
-            this.abilityScores.add(10);
+            this.abilityScoresList.add(score);
         }
     }
     
@@ -290,13 +265,11 @@ public class CharacterSheet {
      * Method applies the appropriate ability score bonuses for each race.
      */
     public void applyRacialBonuses() {
-        if (this.race.getRacialBonuses() != null) {
-            for (Integer ind : this.race.getRacialBonuses().keySet()) {
-                this.abilityScores.set(ind, this.abilityScores.get(ind) + this.race.getRacialBonuses().get(ind));
-                if (this.abilityScores.get(ind) > 20) {
-                    this.abilityScores.set(ind, 20);
-                }
-            }    
+        for (Integer ind : this.race.getRacialBonuses().keySet()) {
+            this.abilityScoresList.set(ind, this.abilityScoresList.get(ind) + this.race.getRacialBonuses().get(ind));
+            if (this.abilityScoresList.get(ind) > 20) {
+                this.abilityScoresList.set(ind, 20);
+            }
         }
     }
     
@@ -305,7 +278,7 @@ public class CharacterSheet {
      * and stores them in a list variable.
      */
     public void generateAbilityScoreModifiers() {
-        this.abilityScoreModifiers.clear();
+        this.abilityScoreModifiersList.clear();
         int listInd = 0;
         int scoreInd = 4;
         int modInd = -3;
@@ -313,10 +286,10 @@ public class CharacterSheet {
             scoreInd = 4;
             modInd = -3;
             while (scoreInd <= 20) {
-                if (this.abilityScores.get(listInd) == scoreInd) {
-                    this.abilityScoreModifiers.add(modInd);
-                } else if (this.abilityScores.get(listInd) == (scoreInd + 1)) {
-                    this.abilityScoreModifiers.add(modInd);
+                if (this.abilityScoresList.get(listInd) == scoreInd) {
+                    this.abilityScoreModifiersList.add(modInd);
+                } else if (this.abilityScoresList.get(listInd) == (scoreInd + 1)) {
+                    this.abilityScoreModifiersList.add(modInd);
                 }
                 scoreInd = scoreInd + 2;
                 modInd++;
@@ -326,28 +299,23 @@ public class CharacterSheet {
     }
     
     public List<Integer> getAbilityScores() {
-        return this.abilityScores;
+        return this.abilityScoresList;
     }
     
     public List<Integer> getAbilityScoreModifiers() {
-        return this.abilityScoreModifiers;
-    }
-    
-    public void eraseAbilityScores() {
-        this.abilityScores.clear();
-        this.abilityScoreModifiers.clear();
+        return this.abilityScoreModifiersList;
     }
     
     /**
      * Method gets equipment from both class and background and stores them in one list.
      */
     public void assignEquipment() {
-        this.equipment.clear();
+        this.equipmentList.clear();
         for (String ce: this.cclass.getEquipment()) {
-            this.equipment.add(ce);
+            this.equipmentList.add(ce);
         }
         for (String bge: this.background.getEquipment()) {
-            this.equipment.add(bge);
+            this.equipmentList.add(bge);
         }
     }
     
@@ -358,11 +326,11 @@ public class CharacterSheet {
      */
     public String getEquipment() {
         String equipment = "";
-        for (int i = 0; i < this.equipment.size(); i++) {
+        for (int i = 0; i < this.equipmentList.size(); i++) {
             if (i == 0) {
-                equipment = equipment + this.equipment.get(i);
+                equipment = equipment + this.equipmentList.get(i);
             } else {
-                equipment = equipment + ", " + this.equipment.get(i);
+                equipment = equipment + ", " + this.equipmentList.get(i);
             }
         }
         return equipment;
@@ -372,15 +340,15 @@ public class CharacterSheet {
      * Method gets equipment from background, class and race, and stores them in one list.
      */
     public void assignProficiencies() {
-        this.proficiencies.clear();
+        this.proficiencyList.clear();
         for (String bgp: this.background.getProficiencies()) {
-            this.proficiencies.add(bgp);
+            this.proficiencyList.add(bgp);
         }
         for (String cp: this.cclass.getProficiencies()) {
-            this.proficiencies.add(cp);
+            this.proficiencyList.add(cp);
         }
         for (String rp: this.race.getProficiencies()) {
-            this.proficiencies.add(rp);
+            this.proficiencyList.add(rp);
         }
     }
     
@@ -391,11 +359,11 @@ public class CharacterSheet {
      */
     public String getProficiencies() {
         String proficiencies = "";
-        for (int i = 0; i < this.proficiencies.size(); i++) {
+        for (int i = 0; i < this.proficiencyList.size(); i++) {
             if (i == 0) {
-                proficiencies = proficiencies + this.proficiencies.get(i);
+                proficiencies = proficiencies + this.proficiencyList.get(i);
             } else {
-                proficiencies = proficiencies + ", " + this.proficiencies.get(i);
+                proficiencies = proficiencies + ", " + this.proficiencyList.get(i);
             }
         }
         return proficiencies;
@@ -418,22 +386,13 @@ public class CharacterSheet {
         return features;
     }
     
-    public void assignSpells() {
-        this.spells.clear();
-        if (this.cclass.getCantripsKnown() != null) {
-            for (int i = 0; i < this.cclass.getCantripsKnown();) {
-                int ind = this.random.nextInt(this.cclass.getCantrips().size());
-                if (!this.spells.contains("0" + this.cclass.getCantrips().get(ind))) {
-                    this.spells.add("0" + this.cclass.getCantrips().get(ind));
-                    i++;
-                }
-            }
-        }
-        if (this.cclass.getSpellsKnown() != null) {
-            for (int i = 0; i < this.cclass.getSpellsKnown();) {
-                int ind = this.random.nextInt(this.cclass.getSpells().size());
-                if (!this.spells.contains("1" + this.cclass.getSpells().get(ind))) {
-                    this.spells.add("1" + this.cclass.getSpells().get(ind));
+    public void assignSpells(List<String> list, Integer known, List<String> spells) {
+        list.clear();
+        if (known != null) {
+            for (int i = 0; i < known;) {
+                int ind = this.random.nextInt(spells.size());
+                if (!list.contains(spells.get(ind))) {
+                    list.add(spells.get(ind));
                     i++;
                 }
             }
@@ -445,13 +404,11 @@ public class CharacterSheet {
         if (this.cclass.getCantripsKnown() == null) {
             cantrips = "-";
         } else {
-            for (int i = 0; i < this.cclass.getCantripsKnown(); i++) {
-                if (this.spells.get(i).startsWith("0")) {
-                    if (i == 0) {
-                        cantrips = cantrips + this.spells.get(i).substring(2);
-                    } else {
-                        cantrips = cantrips + "\n" + this.spells.get(i).substring(2);
-                    }
+            for (int i = 0; i < this.cantripList.size(); i++) {
+                if (i == 0) {
+                    cantrips = cantrips + this.cantripList.get(i).substring(1);
+                } else {
+                    cantrips = cantrips + "\n" + this.cantripList.get(i).substring(1);
                 }
             }
         }
@@ -470,18 +427,14 @@ public class CharacterSheet {
     
     public String getLevel1Spells() {
         String l1Spells = "";
-        boolean indicator = false;
         if (this.cclass.getSpellsKnown() == null) {
             l1Spells = "-";
         } else {
             for (int i = 0; i < this.cclass.getSpellsKnown(); i++) {
-                if (this.spells.get(i).startsWith("1")) {
-                    if (indicator == false) {
-                        l1Spells = l1Spells + this.spells.get(i).substring(2);
-                        indicator = true;
-                    } else {
-                        l1Spells = l1Spells + "\n" + this.spells.get(i).substring(2);
-                    }
+                if (i == 0) {
+                    l1Spells = l1Spells + this.spellList.get(i).substring(1);
+                } else {
+                    l1Spells = l1Spells + "\n" + this.spellList.get(i).substring(1);
                 }
             }
         }
@@ -493,25 +446,23 @@ public class CharacterSheet {
      * based on the character's background and class.
      */
     public void assignProficiencyMarkers() {
-        this.skillMarkers.clear();
+        this.proficiencyMarkerList.clear();
         String[] abilities = {"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"};
         String[] skills = {"Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"};
         for (int i = 0; i < 24; i++) {
-            this.skillMarkers.add("  ");
+            this.proficiencyMarkerList.add("  ");
         }
         assignSavingThrowProficiencyMarkers(abilities);
-        if (this.cclass.getSkills().size() > 0) {
-            int ind = 0;
-            int ind2 = 0;
-            assignSkillProficiencyMarkers(skills, ind, ind2);    
-        }
+        int ind = 0;
+        int ind2 = 0;
+        assignSkillProficiencyMarkers(skills, ind, ind2);
         
     }
     
     public void assignSavingThrowProficiencyMarkers(String[] abilities) {
         for (int i = 0; i < 6; i++) {
             if (this.cclass.getSavingThrows().contains(abilities[i])) {
-                this.skillMarkers.set(i, "o");
+                this.proficiencyMarkerList.set(i, "o");
             }
         }
     }
@@ -519,7 +470,7 @@ public class CharacterSheet {
     public void assignSkillProficiencyMarkers(String[] skills, Integer ind, Integer ind2) {
         for (int i = 0; i < 18; i++) {
             if (this.background.getSkills().contains(skills[i])) {
-                this.skillMarkers.set((i + 6), "o");
+                this.proficiencyMarkerList.set((i + 6), "o");
             }
         }
         for (int j = 0; j < this.cclass.getSkillNumber(); j++) {
@@ -527,7 +478,7 @@ public class CharacterSheet {
             if (!this.background.getSkills().contains(this.cclass.getSkills().get(ind2))) {
                 for (int i = 0; i < 18; i++) {
                     if (this.cclass.getSkills().get(ind2).equals(skills[i])) {
-                        this.skillMarkers.set((i + 6), "o");
+                        this.proficiencyMarkerList.set((i + 6), "o");
                     }
                 }
             }
@@ -540,22 +491,22 @@ public class CharacterSheet {
      * with proficiency bonus added to the values with a corresponding proficiency marker.
      */
     public void assignSavesAndSkills() {
-        this.savesAndSkills.clear();
+        this.savesAndSkillsList.clear();
         Integer[] abilityIndexes = {0, 1, 2, 3, 4, 5, 1 , 4, 3, 0, 5, 3, 4, 5, 3, 4, 3, 4, 5, 5, 3, 1, 1, 4};
         for (int i = 0; i < 24; i++) {
-            if (this.skillMarkers.get(i).equals("o")) {
-                this.savesAndSkills.add(this.abilityScoreModifiers.get(abilityIndexes[i]) + 2);
+            if (this.proficiencyMarkerList.get(i).equals("o")) {
+                this.savesAndSkillsList.add(this.abilityScoreModifiersList.get(abilityIndexes[i]) + 2);
             } else {
-                this.savesAndSkills.add(this.abilityScoreModifiers.get(abilityIndexes[i]));
+                this.savesAndSkillsList.add(this.abilityScoreModifiersList.get(abilityIndexes[i]));
             }
         }
     }
     
-    public List<String> getSkillMarkers() {
-        return this.skillMarkers;
+    public List<String> getProficiencyMarkers() {
+        return this.proficiencyMarkerList;
     }
     
     public List<Integer> getSavesAndSkills() {
-        return this.savesAndSkills;
+        return this.savesAndSkillsList;
     }
 }

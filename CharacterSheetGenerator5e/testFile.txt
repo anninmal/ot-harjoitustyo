@@ -1,0 +1,92 @@
+Name
+Dwarf | Cleric 1
+Acolyte | True Neutral
+
+STR 14 [2] / DEX 10 [0] / CON 13 [1] / INT 14 [2] / WIS 13 [1] / CHA 10 [0]
+
+Hit Points: 9
+Hit Dice: 1d8
+
+Proficiency Bonus: 2
+Armor Class: 10 (+ armor)
+Initiative: 2
+Speed: 25
+
+Saving Throws:
+   2 Strength
+   0 Dexterity
+   1 Constitution
+   2 Intelligence
+o 3 Wisdom
+o 2 Charisma
+
+Skills:
+   0 Acrobatics (Dex)
+   1 Animal Handling (Wis)
+   2 Arcana (Int)
+   2 Athletics (Str)
+   0 Deception (Cha)
+   2 History (Int)
+o 3 Insight (Wis)
+   0 Intimidation (Cha)
+   2 Investigation (Int)
+o 3 Medicine (Wis)
+   2 Nature (Int)
+   1 Perception (Wis)
+   0 Performance (Cha)
+o 2 Persuasion (Cha)
+o 4 Religion (Int)
+   0 Sleight of Hand (Dex)
+   0 Stealth (Dex)
+   1 Survival (Wis)
+
+Proficiencies:
+Two languages of your choice, light armor, medium armor, shields, simple weapon, battleaxe, handaxe, light hammer, warhammer, artisan's tools, Common, Dwarven
+
+Equipment:
+mace, scale mail OR leather armor, light crossbow and 20 bolts OR any simple weapon, priest's pack OR explorer's pack, shield, holy symbol, holy symbol, prayer book, 5 sticks of incense, vestments, set of common clothes
+
+CP:
+SP:
+GP: 15
+EP:
+PP:
+
+Personality Traits:
+Personality
+
+Ideals:
+Ideal
+
+Bonds:
+Bond
+
+Flaws:
+Flaw
+
+Features & Traits:
+[Darkvision] Accustomed to life Underground, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can't discern color in Darkness, only Shades of Gray.
+
+[Dwarven Resilience] You have advantage on Saving Throws against poison, and you have Resistance against poison damage.
+
+[Dwarven Combat Training] You have proficiency with the Battleaxe, Handaxe, Light Hammer, and Warhammer.
+
+[Tool Proficiency] You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.
+
+[Stonecunning] Whenever you make an Intelligence (History) check related to the Origin of stonework, you are considered proficient in the History skill and add double your Proficiency Bonus to the check, instead of your normal Proficiency Bonus.
+
+[Dwarven Toughness] Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
+
+[Divine Domain] Choose one domain related to your deity, such as Life. The Life Domain is detailed at the end of the class description, and provides examples of gods associated with it. Your choice grants you Domain Spells and other features when you choose it at 1st Level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd Level, and additional benefits at 6th, 8th, and 17th levels.
+
+[Shelter of the Faithful] As an acolyte, you Command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your Adventuring companions can expect to receive free Healing and care at a Temple, shrine, or other established presence of your faith, though you must provide any material Components needed for Spells. Those who share your Religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific Temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the Temple where you used to serve, if you remain on good terms with it, or a Temple where you have found a new home. While near your Temple, you can call upon the Priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your Temple.
+
+Spells:
+0:
+Light
+Guidance
+Sacred Flame
+
+1:
+Sanctuary
+Create or Destroy Water

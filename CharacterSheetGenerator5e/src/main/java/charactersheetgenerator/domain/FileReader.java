@@ -32,6 +32,7 @@ public class FileReader {
                 }
             }
         } catch (Exception e) {
+            raceList = null;
         }
         return raceList;
     }
@@ -58,6 +59,7 @@ public class FileReader {
                 }
             }
         } catch (Exception e) {
+            cclassList = null;
         }
         return cclassList;
     }
@@ -84,6 +86,7 @@ public class FileReader {
                 }
             }
         } catch (Exception e) {
+            backgroundList = null;
         }
         return backgroundList;
     }
