@@ -7,7 +7,7 @@ Koodin pakkausrakenne koostuu kahdesta pakkauksesta: *charactersheetgenerator.do
 * *charactersheetgenerator.domain* sisältää sovelluksen sovelluslogiikan.
 
 ## Käyttöliittymä
-Luokka charactersheetgenerator.ui.CSG5eUi sisältää käyttöliittymän, joka koostuu aloitusnäkymästä ja lomakenäkymästä. Näkymät on toteutettu erillisinä **Scene**-olioina, jotka **stage** näyttää aina jomman kumman. Hahmolomakkeen rakentamisesta vastaa metodi createCharacterSheet(), jota redrawCharacterSheet()-metodi kutsuu. Metodia kutsutaan aina, kun nappia "Generate!" painetaan jommassa kummassa näkymässä. Ensimmäisessä näkymässä olevia valintoja käytetään jokaisen uuden lomakkeen luomiseen.
+Luokka charactersheetgenerator.ui.CSG5eUi sisältää käyttöliittymän, joka koostuu aloitusnäkymästä ja lomakenäkymästä. Näkymät on toteutettu erillisinä **Scene**-olioina, joista **stage** näyttää aina jomman kumman. Hahmolomakkeen rakentamisesta vastaa metodi createCharacterSheet(), jota redrawCharacterSheet()-metodi kutsuu. Metodia kutsutaan aina, kun nappia "Generate!" painetaan jommassa kummassa näkymässä. Ensimmäisessä näkymässä olevia valintoja käytetään jokaisen uuden lomakkeen luomiseen.
 
 Käyttöliittymä tuntee luokan [CharacterSheet](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/CharacterSheet.java), joka vastaa lomakkeen tiedoista ja niiden satunnaistamisesta, ja josta käyttöliittymä poimii kaiken tarvittavan tiedon. [SheetSaver](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/SheetSaver.java)-oliota käyttöliittymä käyttää lomakkeiden tallentamiseen. Käyttöliittymä ei siis vastaa sovelluslogiikasta.
 
