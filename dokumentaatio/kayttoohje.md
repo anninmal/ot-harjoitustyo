@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa suoritettava jar tiedosto [CSG5e.jar] (lisää linkki...)
+Lataa suoritettava jar tiedosto [CSG5e.jar](https://github.com/anninmal/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Konfigurointi
 
