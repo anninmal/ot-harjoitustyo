@@ -1,0 +1,130 @@
+Key: NAM: Name, SPE: speed, ASI: ability score increase ([ability score index][increase]), TRA: trait, PRO: proficiency
+
+START
+NAMDwarf
+SPE25
+ASI24
+ASI41
+TRA[Darkvision] Accustomed to life Underground, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can't discern color in Darkness, only Shades of Gray.
+TRA[Dwarven Resilience] You have advantage on Saving Throws against poison, and you have Resistance against poison damage.
+TRA[Dwarven Combat Training] You have proficiency with the Battleaxe, Handaxe, Light Hammer, and Warhammer.
+TRA[Tool Proficiency] You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.
+TRA[Stonecunning] Whenever you make an Intelligence (History) check related to the Origin of stonework, you are considered proficient in the History skill and add double your Proficiency Bonus to the check, instead of your normal Proficiency Bonus.
+TRA[Dwarven Toughness] Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
+PRObattleaxe
+PROhandaxe
+PROlight hammer
+PROwarhammer
+PROartisan's tools
+PROCommon
+PRODwarven
+STOP
+
+START
+NAMElf
+SPE30
+ASI02
+ASI31
+TRA[Darkvision] Accustomed to twilit forests and the night sky, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can’t discern color in Darkness, only Shades of Gray.
+TRA[Keen Senses] You have proficiency in the Perception skill.
+TRA[Fey Ancestry] You have advantage on Saving Throws against being Charmed, and magic can’t put you to sleep.
+TRA[Trance] Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After Resting in this way, you gain the same benefit that a human does from 8 hours of sleep.
+TRA[Elf Weapon Training] You have proficiency with the Longsword, Shortsword, Shortbow, and Longbow.
+TRA[Cantrip] You know one cantrip of your choice from the Wizard spell list. Intelligence is your Spellcasting Ability for it.
+PROlongsword
+PROshortsword
+PROshortbow
+PROlongbow
+PROCommon
+PROElvish
+STOP
+
+START
+NAMHalfling
+SPE25
+ASI12
+ASI51
+TRA[Lucky] When you roll a 1 on The D20 for an Attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.
+TRA[Brave] You have advantage on Saving Throws against being Frightened.
+TRA[Halfling Nimbleness] You can move through the space of any creature that is of a size larger than yours.
+TRA[Naturally Stealthy] You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.
+PROCommon
+PROHalfling
+STOP
+
+START
+NAMHuman
+SPE30
+ASI01
+ASI11
+ASI21
+ASI31
+ASI41
+ASI51 
+PROCommon
+PROone language of your choice
+STOP
+
+START
+NAMDragonborn
+SPE30
+ASI02
+ASI51
+TRA[Draconic Ancestry] You have Draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage Resistance are determined by the dragon type, as shown in the table.
+TRA[Breath Weapon] You can use your action to exhale destructive energy. Your Draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your Draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your Proficiency Bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can’t use it again until you complete a short or Long Rest.
+TRA[Damage Resistance] You have Resistance to the damage type associated with your Draconic ancestry.
+PROCommon
+PRODraconic
+STOP
+
+START
+NAMGnome
+SPE25
+ASI32
+ASI21
+TRA[Darkvision] Accustomed to life Underground, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can’t discern color in Darkness, only Shades of Gray.
+TRA[Gnome Cunning] You have advantage on all Intelligence, Wisdom, and Charisma Saving Throws against magic.
+TRA[Artificer’s Lore] Whenever you make an Intelligence (History) check related to Magic Items, alchemical Objects, or technological devices, you can add twice your Proficiency Bonus, instead of any Proficiency Bonus you normally apply.
+TRA[Tinker] You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to Construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.
+PROCommon
+PROGnomish
+STOP
+
+START
+NAMHalf-elf
+SPE30
+ASI52
+ASI11
+ASI31
+TRA[Darkvision] Thanks to your elf blood, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can’t discern color in Darkness, only Shades of Gray.
+TRA[Fey Ancestry] You have advantage on Saving Throws against being Charmed, and magic can’t put you to sleep.
+TRA[Skill Versatility] You gain proficiency in two Skills of your choice.
+PROtwo skills of your choice
+PROCommon
+PROElvish
+STOP
+
+START
+NAMHalf-orc
+SPE30
+ASI02
+ASI21
+TRA[Darkvision] Thanks to your orc blood, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can’t discern color in Darkness, only Shades of Gray. 
+TRA[Menacing] You gain proficiency in the Intimidation skill.
+TRA[Relentless Endurance] When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a Long Rest.
+TRA[Savage Attacks] When you score a critical hit with a melee weapon Attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.
+PROCommon
+PROOrc
+STOP
+
+START
+NAMTiefling
+SPE30
+ASI52
+ASI31
+TRA[Darkvision] Thanks to your Infernal heritage, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can't discern color in Darkness, only Shades of Gray.
+TRA[Hellish Resistance] You have Resistance to fire damage.
+TRA[Infernal Legacy] You know the Thaumaturgy cantrip. When you reach 3rd Level, you can cast the Hellish Rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a Long Rest. When you reach 5th Level, you can cast the Darkness spell once with this trait and regain the ability to do so when you finish a Long Rest. Charisma is your Spellcasting Ability for these Spells.
+PROCommon
+PROInfernal
+STOP

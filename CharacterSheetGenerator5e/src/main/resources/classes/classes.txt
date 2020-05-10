@@ -1,0 +1,517 @@
+Key: NAM: Name, HID: Hit Dice, SKN: Number of skill proficiencies, SPK: Spells known ([cantrips][spells]), SVT: Saving throws, PRO: Proficiencies, EQU: Equipment, SKI: Skills to pick from, FEA: Class features, SPE: Spells (Cantirips marked with 0, spells marked with 1)
+
+START
+NAMBarbarian
+HID12
+SKN2
+SVTStrength
+SVTConstitution
+PROlight armor
+PROmedium armor
+PROshields
+PROsimple weapons
+PROmartial weapons
+EQUgreataxe OR any martial melee weapon
+EQUtwo handaxes OR any simple weapon
+EQUexplorer's pack
+EQUfour javelins
+SKIAnimal Handling
+SKIAthletics
+SKIIntimidation
+SKINature
+SKIPerception
+SKISurvival
+FEA[Rage] In battle, you fight with primal ferocity. On Your Turn, you can enter a rage as a Bonus Action. While raging, you gain the following benefits if you aren't wearing heavy armor: -You have advantage on Strength Checks and Strength Saving Throws. -When you make a melee weapon Attack using Strength, you gain a +2 bonus to the damage roll. This bonus increases as you level. -You have Resistance to bludgeoning, piercing, and slashing damage. If you are able to cast Spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked Unconscious or if Your Turn ends and you haven't attacked a Hostile creature since your last turn or taken damage since then. You can also end your rage on Your Turn as a Bonus Action. Once you have raged the maximum number of times for your Barbarian level, you must finish a Long Rest before you can rage again. You may rage 2 times at 1st Level, 3 at 3rd, 4 at 6th, 5 at 12th, and 6 at 17th.
+FEA[Unarmored Defense] While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a Shield and still gain this benefit.
+STOP
+
+START
+NAMBard
+HID8
+SKN3
+SPK24
+SVTDexterity
+SVTCharisma
+PROlight armor
+PROsimple weapons
+PROhand crossbows
+PROlongswords
+PROrapiers
+PROshortswords
+PROthree musical instruments of your choice
+EQUrapier OR longsword OR any simple weapon
+EQUdiplomat's pack OR entertainer's pack
+EQUone musical instrument
+EQUleather armor
+EQUdagger
+SKIAcrobatics
+SKIAnimal Handling
+SKIArcana
+SKIAthletics
+SKIDeception
+SKIHistory
+SKIInsight
+SKIIntimidation
+SKIInvestigation
+SKIMedicine
+SKINature
+SKIPerception
+SKIPerformance
+SKIPersuasion
+SKIReligion
+SKISleight of Hand
+SKIStealth
+SKISurvival
+FEA[Bardic Inspiration] You can inspire others through stirring words or music. To do so, you use a Bonus Action on Your Turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6. Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, Attack roll, or saving throw it makes. The creature can wait until after it rolls The D20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a Long Rest. Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th Level, a d10 at 10th level, and a d12 at 15th level.
+SPE0Blade Ward
+SPE0Dancing Lights
+SPE0Friends
+SPE0Light
+SPE0Mage Hand
+SPE0Mending
+SPE0Message
+SPE0Minor Illusion
+SPE0Prestidigitation
+SPE0True Strike
+SPE0Vicious Mockery
+SPE1Animal Friendship
+SPE1Bane
+SPE1Charm Person
+SPE1Comprehend Languages
+SPE1Cure Wounds
+SPE1Detect Magic
+SPE1Disguise Self
+SPE1Dissonant Whispers
+SPE1Faerie Fire
+SPE1Feather Fall
+SPE1Healing Word
+SPE1Heroism
+SPE1Identify
+SPE1Illusory Script
+SPE1Longstrider
+SPE1Silent Image
+SPE1Sleep
+SPE1Speak with Animals
+SPE1Tasha's Hideous Laughter
+SPE1Thunderwave
+SPE1Unseen Servant
+STOP
+
+START
+NAMCleric
+HID8
+SKN2
+SPK32
+SVTWisdom
+SVTCharisma
+PROlight armor
+PROmedium armor
+PROshields
+PROsimple weapon
+EQUmace
+EQUscale mail OR leather armor
+EQUlight crossbow and 20 bolts OR any simple weapon
+EQUpriest's pack OR explorer's pack
+EQUshield
+EQUholy symbol
+SKIHistory
+SKIInsight
+SKIMedicine
+SKIPersuasion
+SKIReligion
+FEA[Divine Domain] Choose one domain related to your deity, such as Life. The Life Domain is detailed at the end of the class description, and provides examples of gods associated with it. Your choice grants you Domain Spells and other features when you choose it at 1st Level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd Level, and additional benefits at 6th, 8th, and 17th levels.
+SPE0Guidance
+SPE0Light
+SPE0Mending
+SPE0Resistance
+SPE0Sacred Flame
+SPE0Spare the Dying
+SPE0Thaumaturgy
+SPE1Bane
+SPE1Bless
+SPE1Command
+SPE1Create or Destroy Water
+SPE1Cure Wounds
+SPE1Detect Evil and Good
+SPE1Detect Magic
+SPE1Detect Poison and Disease
+SPE1Guiding Bolt
+SPE1Healing Word
+SPE1Inflict Wounds
+SPE1Protection from Evil and Good
+SPE1Purify Food and Drink
+SPE1Sanctuary
+SPE1Shield of Faith
+STOP
+
+START
+NAMDruid
+HID8
+SKN2
+SPK22
+SVTIntelligence
+SVTWisdom
+PROclubs
+PROdaggers
+PROdarts
+PROjavelins
+PROmaces
+PROquarterstaffs
+PROscimitars
+PROsickles
+PROslings
+PROspears
+PROherbalism kit
+EQUwooden shield OR any simple weapon
+EQUscimitar OR any simple melee weapon
+EQUleather armor
+EQUexplorer's pack
+EQUdruidic focus
+SKIArcana
+SKIAnimal Handling
+SKIInsight
+SKIMedicine
+SKINature
+SKIPerception
+SKIReligion
+SKISurvival
+FEA[Druidic] You know Druidic, the Secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a Message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic.
+SPE0Druidcraft
+SPE0Guidance
+SPE0Mending
+SPE0Poison Spray
+SPE0Produce Flame
+SPE0Resistance
+SPE0Shillelagh
+SPE0Thorn Whip
+SPE1Animal Friendship
+SPE1Charm Person
+SPE1Create or Destroy Water
+SPE1Cure Wounds
+SPE1Detect Magic
+SPE1Detect Poison and Disease
+SPE1Entangle
+SPE1Faerie Fire
+SPE1Fog Cloud
+SPE1Goodberry
+SPE1Healing Word
+SPE1Jump
+SPE1Longstrider
+SPE1Purify Food and Drink
+SPE1Speak with Animals
+SPE1Thunderwave
+STOP
+
+START
+NAMFighter
+HID10
+SKN2
+SVTStrength
+SVTConstitution
+PROall armor
+PROshields
+PROsimple weapons
+PROmartial weapons
+EQUchain mail OR leather armor + longbow + 20 arrows
+EQUmartial weapon + shield OR two martial weapons
+EQUlight crossbow + 20 bolts OR two handaxes
+EQUdungeoneer's pack OR exporer's pack
+SKIAcrobatics
+SKIAnimal Handling
+SKIAthletics
+SKIHistory
+SKIInsight
+SKIIntimidation
+SKIPerception
+SKISurvival
+FEA[Fighting Style] You adopt a particular style of fighting as your specialty. Choose a Fighting Style from the list of optional features. You can't take the same Fighting Style option more than once, even if you get to choose again.
+FEA[Second Wind] You have a limited well of stamina that you can draw on to protect yourself from harm. On Your Turn, you can use a Bonus Action to regain Hit Points equal to 1d10 + your Fighter level. Once you use this feature, you must finish a short or Long Rest before you can use it again.
+STOP
+
+START
+NAMMonk
+HID8
+SKN2
+SVTStrength
+SVTDexterity
+PROsimple weapons
+PROshortswords
+PROone type of artisan's tools OR one musical instrument
+EQUshortsword OR any simple weapon
+EQUdungeoneer's pack OR explorer's pack
+EQU10 darts
+SKIAcrobatics
+SKIAthletics
+SKIHistory
+SKIInsight
+SKIReligion
+SKIStealth
+FEA[Unarmored Defense] Beginning at 1st Level, while you are wearing no armor and not wielding a Shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier.
+FEA[Martial Arts] Your practice of martial arts gives you mastery of Combat styles that use unarmed strikes and monk Weapons, which are shortswords and any simple Melee Weapons that don't have the Two-Handed or heavy property. You gain the following benefits while you are unarmed or wielding only monk Weapons and you aren't wearing armor or wielding a Shield. -You can use Dexterity instead of Strength for the Attack and Damage Rolls of your unarmed strikes and monk Weapons. -You can roll a d4 in place of the normal damage of your Unarmed Strike or monk weapon. -When you use the Attack action with an Unarmed Strike or a monk weapon on Your Turn, you can make one Unarmed Strike as a Bonus Action. For example, if you take the Attack action and Attack with a Quarterstaff, you can also make an Unarmed Strike as a Bonus Action, assuming you haven't already taken a Bonus Action this turn. Certain monasteries use specialized forms of the monk Weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a Sickle with a shorter, straighter blade (called a kama). Whatever name you use for a monk weapon, you can use the game Statistics provided for the weapon.
+STOP
+
+START
+NAMPaladin
+HID10
+SKN2
+SVTWisdom
+SVTCharisma
+PROall armor
+PROshields
+PROsimple weapons
+PROmartial weapons
+EQUmartial weapon and shield OR two martial weapons
+EQUfive javelins OR any simple melee weapon
+EQUpriest's pack OR explorer's pack
+EQUchain mail
+EQUholy symbol
+SKIAthletics
+SKIInsight
+SKIIntimidation
+SKIMedicine
+SKIPersuasion
+SKIReligion
+FEA[Divine Sense] The presence of strong evil registers on your Senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any Celestial, fiend, or Undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the Vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the Hallow spell. You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a Long Rest, you regain all expended uses.
+FEA[Lay on Hands] Your blessed touch can heal wounds. You have a pool of Healing power that replenishes when you take a Long Rest. With that pool, you can restore a total number of Hit Points equal to your Paladin level x 5. As an action, you can touch a creature and draw power from the pool to restore a number of Hit Points to that creature, up to the maximum amount remaining in your pool. Alternatively, you can expend 5 Hit Points from your pool of Healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple Diseases and neutralize multiple Poisons with a single use of Lay on Hands, expending Hit Points separately for each one. This feature has no effect on Undead and Constructs.
+STOP
+
+START
+NAMRanger
+HID10
+SKN3
+SVTStrength
+SVTDexterity
+PROlight armor
+PROmedium armor
+PROshields
+PROsimple weapons
+PROmartial weapons
+EQUscale mail OR leather armor
+EQUshortsword OR two simple melee weapons
+EQUdungeoneer's pack OR explorer's pack
+EQUlongbow
+EQUquiver of 20 arrows
+SKIAnimal Handling
+SKIAthletics
+SKIInsight
+SKIInvestigation
+SKINature
+SKIPerception
+SKIStealth
+SKISurvival
+FEA[Favored Enemy] Beginning at 1st Level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. Choose a type of Favored enemy: Aberrations, Beasts, Celestials, Constructs, Dragons, Elementals, fey, Fiends, Giants, Monstrosities, oozes, Plants, or Undead. Alternatively, you can select two races of Humanoid (such as Gnolls and orcs) as Favored enemies. You have advantage on Wisdom (Survival) checks to track your Favored enemies, as well as on Intelligence Checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your Favored enemies, if they speak one at all. You choose one additional Favored Enemy, as well as an associated language, at 6th and 14th level. As you gain levels, your choices should reflect the types of Monsters you have encountered on your Adventures.
+FEA[Natural Explorer] You are particularly familiar with one type of natural Environment and are adept at traveling and surviving in such regions. Choose one type of Favored terrain: Arctic, coast, Desert, Forest, Grassland, Mountain, swamp, or The Underdark. When you make an Intelligence or Wisdom check related to your Favored terrain, your Proficiency Bonus is doubled if you are using a skill that you're proficient in. While traveling for an hour or more in your Favored terrain, you gain the following benefits: -Difficult Terrain doesn't slow your group's Travel. -Your group can't become lost except by magical means. -Even when you are engaged in another Activity While Traveling (such as foraging, navigating, or tracking), you remain alert to danger. -If you are traveling alone, you can move stealthily at a normal pace. -When you Forage, you find twice as much food as you normally would. -While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area. You choose additional Favored terrain types at 6th and 10th level.
+STOP
+
+START
+NAMRogue
+HID8
+SKN4
+SVTDexterity
+SVTIntelligence
+PROlight armor
+PROsimple weapons
+PROhand crossbows
+PROlongswords
+PROrapiers
+PROshortswords
+PROthieves' tools
+EQUrapier OR shortsword
+EQUshortbow + quiver of 20 arrows OR shortsword
+EQUlight crossbow + 20 bolts OR two handaxes
+EQUburglar's pack OR dungeoneer's pack OR explorer's pack
+EQUleather armor
+EQUtwo daggers
+EQUthieves' tools
+SKIAcrobatics
+SKIAthletics
+SKIDeception
+SKIInsight
+SKIIntimidation
+SKIInvestigation
+SKIPerception
+SKIPerformance
+SKIPersuasion
+SKISleight of Hand
+SKIStealth
+FEA[Expertise] At 1st Level, choose two of your skill Proficiencies, or one of your skill Proficiencies and your proficiency with Thieves' Tools. Your Proficiency Bonus is doubled for any ability check you make that uses either of the chosen Proficiencies. At 6th level, you can choose two more of your Proficiencies (in Skills or with thieves' tools) to gain this benefit.
+FEA[Sneak Attack] Beginning at 1st Level, you know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an Attack if you have advantage on the Attack roll. The Attack must use a Finesse or a ranged weapon. You don't need advantage on the Attack roll if another enemy of the target is within 5 feet of it, that enemy isn't Incapacitated, and you don't have disadvantage on the Attack roll. The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.
+FEA[Thieves' Cant] During your rogue Training you learned thieves' cant, a Secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a Message than it does to speak the same idea plainly. In addition, you understand a set of Secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a Safe House for thieves on the run.
+STOP
+
+START
+NAMSorcerer
+HID6
+SKN2
+SPK42
+SVTConstitution
+SVTCharisma
+PROdaggers
+PROdarts
+PROslings
+PROquarterstaffs
+PROlight crossbows
+EQUlight corssbow and 20 bolts OR any simple weapon
+EQUarcane focus
+EQUdungeoneer's pack OR explorer's pack
+EQUtwo daggers
+SKIArcana
+SKIDeception
+SKIInsight
+SKIIntimidation
+SKIPersuasion
+SKIReligion
+FEA[Sorcerous Origin] Choose a sorcerous Origin, which describes the source of your innate magical power, such as Draconic Bloodline. Your choice grants you features when you choose it at 1st Level and again at 6th, 14th, and 18th level.
+SPE0Acid Splash
+SPE0Blade Ward
+SPE0Chill Touch
+SPE0Dancing Lights
+SPE0Fire Bolt
+SPE0Friends
+SPE0Light
+SPE0Mage Hand
+SPE0Mending
+SPE0Message
+SPE0Minor Illusion
+SPE0Poison Spray
+SPE0Prestidigitation
+SPE0Ray of Frost
+SPE0Shocking Grasp
+SPE0True Strike
+SPE1Burning Hands
+SPE1Charm Person
+SPE1Chromatic Orb
+SPE1Color Spray
+SPE1Comprehend Languages
+SPE1Detect Magic
+SPE1Disguise Self
+SPE1Expeditious Retreat
+SPE1False Life
+SPE1Feather Fall
+SPE1Fog Cloud
+SPE1Jump
+SPE1Mage Armor
+SPE1Magic Missile
+SPE1Ray of Sickness
+SPE1Shield
+SPE1Silent Image
+SPE1SLeep
+SPE1Thunderwave
+SPE1Witch Bolt
+STOP
+
+START
+NAMWarlock
+HID8
+SKN2
+SPK22
+SVTWisdom
+SVTCharisma
+PROlight armor
+PROsimple weapons
+EQUlight crossbow OR any simple weapon
+EQUarcane focus
+EQUscholar's pack OR dungeoneer's pack
+EQUleather armor
+EQUany simple weapon
+EQUtwo daggers
+SKIArcana
+SKIDeception
+SKIHistory
+SKIIntimidation
+SKIInvestigation
+SKINature
+SKIReligion
+FEA[Otherworldly Patron] At 1st Level, you have struck a bargain with an otherworldly being of your choice, such as The Fiend. Your choice grants you features at 1st Level and again at 6th, 10th, and 14th level.
+SPE0Blade Ward
+SPE0Chill Touch
+SPE0Eldritch Blast
+SPE0Friends
+SPE0Mage Hand
+SPE0Minor Illusion
+SPE0Poison Spray
+SPE0Prestidigitation
+SPE0True Strike
+SPE1Armor or Agathys
+SPE1Arms of Hadar
+SPE1Charm Person
+SPE1Comprehend Languages
+SPE1Expeditious Retreat
+SPE1Hellish Rebuke
+SPE1Hex
+SPE1Illusory Script
+SPE1Protection from Evil and Good
+SPE1Unseen Servant
+SPE1Witch Bolt
+STOP
+
+START
+NAMWizard
+HID6
+SKN2
+SPK32
+SVTIntelligence
+SVTWisdom
+PROdaggers
+PROdarts
+PROslings
+PROquarterstaffs
+PROlight crossbows
+EQUquarterstaff OR dagger
+EQUarcane focus
+EQUscholar's pack OR explorer's pack
+EQUspellbook
+SKIArcana
+SKIHistory
+SKIInsight
+SKIInvestigation
+SKIMedicine
+SKIReligion
+FEA[Arcane Recovery] You have learned to regain some of your magical energy by studying your Spellbook. Once per day when you finish a Short Rest, you can choose expended Spell Slots to recover. The Spell Slots can have a combined level that is equal to or less than half your Wizard level (rounded up), and none of the slots can be 6th level or higher. For example, if you’re a 4th-level Wizard, you can recover up to two levels worth of Spell Slots. You can recover either a 2nd-level spell slot or two 1st-level Spell Slots.
+SPE0Acid Splash
+SPE0Blade Ward
+SPE0Chill Touch
+SPE0Dancing Lights
+SPE0Fire Bolt
+SPE0Friends
+SPE0Light
+SPE0Mage Hand
+SPE0Mending
+SPE0Message
+SPE0Minor Illusion
+SPE0Poison Spray
+SPE0Prestidigitation
+SPE0Ray of Frost
+SPE0Shocking Grasp
+SPE0True Strike
+SPE1Alarm
+SPE1Burning Hands
+SPE1Charm Person
+SPE1Chromatic Orb
+SPE1Color Spray
+SPE1Comprehend Languages
+SPE1Detect Magic
+SPE1Disguise Self
+SPE1Expeditious Retreat
+SPE1False Life
+SPE1Featehr Fall
+SPE1Find Familiar
+SPE1Fog Cloud
+SPE1Grease
+SPE1Identify
+SPE1Illusory Script
+SPE1Jump
+SPE1Longstrider
+SPE1Mage Armor
+SPE1Magic Missile
+SPE1Protection from Evil and Good
+SPE1Ray of Sickness
+SPE1Shield
+SPE1Silent Image
+SPE1Sleep
+SPE1Tasha's Hideous Laughter
+SPE1Tenser's Floating Disk
+SPE1Thunderwave
+SPE1Unseen Servant
+SPE1Witch Bolt
+STOP

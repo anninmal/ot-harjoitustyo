@@ -1,0 +1,238 @@
+Key: NAM: name, GOP: amount of gold pieces, FEA: feature, PRO: proficiency, SKI: skill proficiency, EQU: equipment, PER: personality trait, IDE: ideal, BON: bond, FLA: flaw
+
+START
+NAMAcolyte
+GOP15
+FEA[Shelter of the Faithful] As an acolyte, you Command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your Adventuring companions can expect to receive free Healing and care at a Temple, shrine, or other established presence of your faith, though you must provide any material Components needed for Spells. Those who share your Religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific Temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the Temple where you used to serve, if you remain on good terms with it, or a Temple where you have found a new home. While near your Temple, you can call upon the Priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your Temple.
+PROTwo languages of your choice
+SKIInsight
+SKIReligion
+EQUholy symbol
+EQUprayer book
+EQU5 sticks of incense
+EQUvestments
+EQUset of common clothes
+PERI idolize a particular hero of my faith, and constantly refer to that person’s deeds and example.
+PERI can find Common ground between the fiercest enemies, empathizing with them and always working toward peace.
+PERI see omens in every event and action. The gods try to speak to us, we just need to listen
+PERNothing can shake my optimistic attitude.
+PERI quote (or misquote) sacred texts and proverbs in almost every situation.
+PERI am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods.
+PERI’ve enjoyed fine food, drink, and high society among my temple’s elite. Rough living grates on me.
+PERI’ve spent so long in the Temple that I have little practical experience dealing with people in the outside world.
+IDETradition. The ancient traditions of worship and sacrifice must be preserved and upheld.
+IDECharity. I always try to help those in need, no matter what the personal cost.
+IDEChange. We must help bring about the changes the gods are constantly working in the world.
+IDEPower. I hope to one day rise to the top of my faith’s religious Hierarchy.
+IDEFaith. I trust that my deity will guide my Actions. I have faith that if I work hard, things will go well.
+IDE	Aspiration. I seek to prove myself worthy of my god’s favor by matching my Actions against his or her teachings.
+BONI would die to recover an ancient relic of my faith that was lost long ago.
+BONI will someday get revenge on the corrupt Temple Hierarchy who branded me a heretic.
+BONI owe my life to the Priest who took me in when my Parents died.
+BONEverything I do is for the Common people.
+BONI will do anything to protect the Temple where I served.
+BONI seek to preserve a sacred text that my enemies consider heretical and seek to destroy.
+FLAI judge others harshly, and myself even more severely.
+FLAI put too much trust in those who wield power within my temple’s Hierarchy.
+FLAMy piety sometimes leads me to blindly trust those that profess faith in my god.
+FLAI am inflexible in my thinking.
+FLAI am suspicious of strangers and expect the worst of them.
+FLAOnce I pick a goal, I become obsessed with it to the detriment of everything else in my life.
+STOP
+
+START
+NAMCriminal
+GOP15
+FEA[Criminal Contact] You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you.
+PROone type of gaming set
+PROthieves' tools
+SKIDeception
+SKIStealth
+EQUcrowbar
+EQUset of dark common clothes including a hood
+PERI always have a plan for what to do when things go wrong.
+PERI am always calm, no matter what the situation. I never raise my voice or let my emotions control me.
+PERThe first thing I do in a new place is note the locations of everything valuable – or where such things could be hidden.
+PERI would rather make a new friend than a new enemy.
+PERI am incredibly slow to trust. Those who seem the fairest often have the most to hide.
+PERI don't pay attention to the risks in a situation. Never tell me the odds.
+PERThe best way to get me to do something is to tell me I can't do it.
+PERI blow up at the slightest insult.
+IDEHonor. I don't steal from others in the trade.
+IDEFreedom. Chains are meant to be broken, as are those who would forge them.
+IDECharity. I steal from the wealthy so that I can help people in need.
+IDEGreed. I will do whatever it takes to become wealthy.
+IDEPeople. I'm loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care.
+IDERedemption. There's a spark of good in everyone.
+BONI'm trying to pay off an old debt I owe to a generous benefactor.
+BONMy ill-gotten gains go to support my family.
+BONSomething important was taken from me, and I aim to steal it back.
+BONI will become the greatest thief that ever lived.
+BONI'm guilty of a terrible crime. I hope I can redeem myself for it.
+BONSomeone I loved died because of I mistake I made. That will never happen again.
+FLAWhen I see something valuable, I can't think about anything but how to steal it.
+FLAWhen faced with a choice between money and my friends, I usually choose the money.
+FLAIf there's a plan, I'll forget it. If I don't forget it, I'll ignore it.
+FLAI have a "tell" that reveals when I'm lying.
+FLAI turn tail and run when things look bad.
+FLAAn innocent person is in prison for a crime that I committed. I'm okay with that.
+STOP
+
+START
+NAMFolk Hero
+GOP10
+FEA[Rustic Hospitality] Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they will not risk their lives for you.
+PROland vehicles
+PROone type of artisan's tools
+SKIAnimal Handling
+SKISurvival
+EQUone set of artisan's tools
+EQUshovel
+EQUiron pot
+EQUset of common clothes
+PERI judge people by their actions, not their words.
+PERIf someone is in trouble, I'm always ready to lend help.
+PERWhen I set my mind to something, I follow through no matter what gets in my way.
+PERI have a strong sense of fair play and always try to find the most equitable solution to arguments.
+PERI'm confident in my own abilities and do what I can to instill confidence in others.
+PERThinking is for other people. I prefer action.
+PERI misuse long words in an attempt to sound smarter.
+PERI get bored easily. When am I going to get on with my destiny?
+IDERespect. People deserve to be treated with dignity and respect.
+IDEFairness. No one should get preferential treatment before the law, and no one is above the law.
+IDEFreedom. Tyrants must not be allowed to oppress the people.
+IDEMight. If I become strong, I can take what I want – what I deserve.
+IDESincerity. There's no good in pretending to be something I'm not.
+IDEDestiny. Nothing and no one can steer me away from my higher calling.
+BONI have a family, but I have no idea where they are. One day, I hope to see them again.
+BONI worked the land, I love the land, and I will protect the land.
+BONA proud noble once gave me a horrible beating, and I will take my revenge on any bully I encounter.
+BONMy tools are symbols of my past life, and I carry them so that I will never forget my roots.
+BONI protect those who cannot protect themselves.
+BONI wish my childhood sweetheart had come with me to pursue my destiny.
+FLAThe tyrant who rules my land will stop at nothing to see me killed.
+FLAI'm convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure.
+FLAThe people who knew me when I was young know my shameful secret, so I can never go home again.
+FLAI have a weakness for the vices of the city, especially hard drink.
+FLASecretly, I believe that things would be better if I were a tyrant lording over the land.
+FLAI have trouble trusting in my allies.
+STOP
+
+START
+NAMNoble
+GOP25
+FEA[Position of Privilege] Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to.
+PROone type of gaming set
+PROone language of your choice
+SKIHistory
+SKIPersuasion
+EQUset of fine clothes
+EQUsignet ring
+EQUscroll of pedigree
+PERMy eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.
+PERThe common folk love me for my kindness and generosity.
+PERNo one could doubt by looking at my regal bearing that I am a cut above the unwashed masses.
+PERI take great pains to always look my best and follow the latest fashions.
+PERI don't like to get my hands dirty, and I won't be caught dead in unsuitable accommodations.
+PERDespite my noble birth, I do not place myself above other folk. We all have the same blood.
+PERMy favor, once lost, is lost forever.
+PERIf you do me an injury, I will crush you, ruin your name, and salt your fields.
+IDERespect. Respect is due to me because of my position, but all people regardless of station deserve to be treated with dignity.
+IDEResponsibility. It is my duty to respect the authority of those above me, just as those below me must respect mine.
+IDEIndependence. I must prove that I can handle myself without the coddling of my family.
+IDEPower. If I can attain more power, no one will tell me what to do.
+IDEFamily. Blood runs thicker than water.
+IDENoble Obligation. It is my duty to protect and care for the people beneath me.
+BONI will face any challenge to win the approval of my family,
+BONMy house's alliance with another noble family must be sustained at all costs.
+BONNothing is more important than the other members of my family.
+BONI am in love with the heir of a family that my family despises.
+BONMy loyalty to my sovereign is unwavering.
+BONThe common folk must see me as a hero of the people.
+FLAI secretly believe that everyone is beneath me.
+FLAI hide a truly scandalous secret that could ruin my family forever.
+FLAI too often hear veiled insults and threats in every word addressed to me, and I'm quick to anger.
+FLAI have an insatiable desire for carnal pleasures.
+FLAIn fact, the world does revolve around me.
+FLABy my words and actions, I often bring shame to my family.
+STOP
+
+START
+NAMSage
+GOP10
+FEA[Researcher] When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an aDventure or even a whole campaign.
+PROtwo languages of your choice
+SKIArcana
+SKIHistory
+EQUbottle of black ink
+EQUquill
+EQUsmall knife
+EQUletter from a dead colleague posing a question you have not yet been able to answer
+EQUset of common clothes
+PERI use polysyllabic words that convey the impression of great erudition.
+PERI've read every book in the world's greatest libraries – or I like to boast that I have.
+PERI'm used to helping out those who aren't as smart as I am, and I patiently explain anything and everything to others.
+PERThere's nothing I like more than a good mystery.
+PERI'm willing to listen to every side of an argument before I make my own judgment.
+PERI… speak… slowly… when talking… to idiots,… which… almost… everyone… is… compared… to me.
+PERI am horribly, horribly awkward in social situations.
+PERI'm convinced that people are always trying to steal my secrets.
+IDEKnowledge. The path to power and self-improvement is through knowledge.
+IDEBeauty. What is beautiful points us beyond itself toward what is true.
+IDELogic. Emotions must not cloud our logical thinking.
+IDENo Limits. Nothing should fetter the infinite possibility inherent in all existence.
+IDEPower. Knowledge is the path to power and domination.
+IDESelf-Improvement. The goal of a life of study is the betterment of oneself.
+BONIt is my duty to protect my students.
+BONI have an ancient text that holds terrible secrets that must not fall into the wrong hands.
+BONI work to preserve a library, university, scriptorium, or monastery.
+BONMy life's work is a series of tomes related to a specific field of lore.
+BONI've been searching my whole life for the answer to a certain question.
+BONI sold my soul for knowledge. I hope to do great deeds and win it back.
+FLAI am easily distracted by the promise of information.
+FLAMost people scream and run when they see a demon. I stop and take notes on its anatomy.
+FLAUnlocking an ancient mystery is worth the price of a civilization.
+FLAI overlook obvious solutions in favor of complicated ones.
+FLAI speak without really thinking through my words, invariably insulting others.
+FLAI can't keep a secret to save my life, or anyone else's.
+STOP
+
+START
+NAMSoldier
+GOP10
+FEA[Military Rank] You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses where your rank is recognized.
+PROone type of gaming set
+PROland vehicles
+SKIAthletics
+SKIIntimidation
+EQUinsignia of rank
+EQUtrophy taken from a fallen enemy
+EQUset of bone dice or deck of cards
+EQUset of common clothes
+PERI'm always polite and respectful.
+PERI'm haunted by memories of war. I can't get the images of violence out of my mind.
+PERI've lost too many friends, and I'm slow to make new ones.
+PERI'm full of inspiring and cautionary tales from my military experience relevant to almost every combat situation.
+PERI can stare down a hell hound without flinching.
+PERI enjoy being strong and like breaking things.
+PERI have a crude sense of humor.
+PERI face problems head-on. A simple, direct solution is the best path to success.
+IDEGreater Good. Our lot is to lay down our lives in defense of others.
+IDEResponsibility. I do what I must and obey just authority.
+IDEIndependence. When people follow orders blindly, they embrace a kind of tyranny.
+IDEMight. In life as in war, the stronger force wins.
+IDELive and Let Live. Ideals aren't worth killing over or going to war for.
+IDENation. My city, nation, or people are all that matter.
+BONI would still lay down my life for the people I served with.
+BONSomeone saved my life on the battlefield. To this day, I will never leave a friend behind.
+BONMy honor is my life.
+BONI'll never forget the crushing defeat my company suffered or the enemies who dealt it.
+BONThose who fight beside me are those worth dying for.
+BONI fight for those who cannot fight for themselves.
+FLAThe monstrous enemy we faced in battle still leaves me quivering with fear.
+FLAI have little respect for anyone who is not a proven warrior.
+FLAI made a terrible mistake in battle cost many lives – and I would do anything to keep that mistake secret.
+FLAMy hatred of my enemies is blind and unreasoning.
+FLAI obey the law, even if the law causes misery.
+FLAI'd rather eat my armor than admit when I'm wrong.
+STOP

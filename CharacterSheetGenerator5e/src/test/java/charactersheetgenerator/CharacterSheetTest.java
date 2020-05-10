@@ -1,5 +1,6 @@
 package charactersheetgenerator;
 
+import charactersheetgenerator.domain.CharacterClass;
 import charactersheetgenerator.domain.CharacterSheet;
 import java.util.List;
 import org.junit.Before;
@@ -19,17 +20,37 @@ public class CharacterSheetTest {
     @Test
     public void createRacesCreatesRaces() {
         sheet.createRaces();
-        assertEquals("Hill Dwarf", sheet.getRaces().get(0).getName());
+        assertEquals("Dwarf", sheet.getRaces().get(0).getName());
         assertTrue("Race list should not be null.", sheet.getRaces() != null);
         assertTrue("Race list should not be empty.", sheet.getRaces().size() > 0);
     }
     
     @Test
+    public void racesHaveAppropriateInformation() {
+        sheet.createRaces();
+    }
+    
+    @Test
     public void createClassesCreatesClasses() {
         sheet.createClasses();
-        assertEquals("Fighter", sheet.getClasses().get(0).getName());
+        assertEquals("Barbarian", sheet.getClasses().get(0).getName());
         assertTrue("Class list should not be null.", sheet.getClasses() != null);
         assertTrue("Class list should not be empty.", sheet.getClasses().size() > 0);
+    }
+    
+    @Test
+    public void classesHaveAppropriateInformation() {
+        sheet.createClasses();
+        for (CharacterClass c : sheet.getClasses()) {
+            assertTrue("Class should have a name.", c.getName() != null);
+            assertTrue("There should be a number for the hit die.", c.getHitdie() == 6 || c.getHitdie() == 8 || c.getHitdie() == 10 || c.getHitdie() == 12);
+            assertTrue("There should be a number representing the amount of skill proficiencies.", c.getSkillNumber() != null);
+            assertTrue("There should be two saving throws", c.getSavingThrows().size() == 2);
+            assertTrue("List of proficiencies should not be empty.", c.getProficiencies() != null);
+            assertTrue("List of equipment should not be empty.", c.getEquipment() != null);
+            assertTrue("List of skills should not be empty.", c.getSkills() != null);
+            assertTrue("List of features should not be empty.", c.getFeatures() != null);
+        }
     }
     
     @Test
@@ -66,8 +87,8 @@ public class CharacterSheetTest {
     @Test
     public void pickRacePicksRace() {
         sheet.createRaces();
-        sheet.pickRace("Hill Dwarf");
-        assertEquals("Hill Dwarf", sheet.getRace().getName());
+        sheet.pickRace("Dwarf");
+        assertEquals("Dwarf", sheet.getRace().getName());
     }
     
     @Test

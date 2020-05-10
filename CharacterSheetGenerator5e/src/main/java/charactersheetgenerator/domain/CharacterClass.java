@@ -12,18 +12,38 @@ public class CharacterClass {
     private String name;
     private Integer hitdie;
     private Integer skillNumber;
-    private List<String> savingthrowlist;
-    private List<String> proficiencylist;
-    private List<String> equipmentlist;
-    private List<String> skillist;
-    private List<String> featurelist;
+    private Integer spellsKnown;
+    private Integer cantripsKnown;
+    private List<String> savingthrowList;
+    private List<String> proficiencyList;
+    private List<String> equipmentSkillsAndFeaturesList;
+    private List<String> spellList;
     
     public CharacterClass() {
-        this.savingthrowlist = new ArrayList<>();
-        this.proficiencylist = new ArrayList<>();
-        this.equipmentlist = new ArrayList<>();
-        this.skillist = new ArrayList<>();
-        this.featurelist = new ArrayList<>();
+        this.savingthrowList = new ArrayList<>();
+        this.proficiencyList = new ArrayList<>();
+        this.equipmentSkillsAndFeaturesList = new ArrayList<>();
+        this.spellList = new ArrayList<>();
+    }
+    
+    public void sortClassInfo(String line) {
+        if (line.startsWith("NAM")) {
+            addName(line.substring(3));
+        } else if (line.startsWith("SVT")) {
+            addSavingThrow(line.substring(3));
+        } else if (line.startsWith("PRO")) {
+            addProficiency(line.substring(3));
+        } else if (line.startsWith("EQU") || line.startsWith("SKI") || line.startsWith("FEA")) {
+            addEquipmentSkillOrFeature(line);
+        } else if (line.startsWith("HID")) {
+            addHitdie(Integer.parseInt(line.substring(3)));
+        } else if (line.startsWith("SKN")) {
+            addSkillNumber(Integer.parseInt(line.substring(3)));
+        } else if (line.startsWith("SPE")) {
+            addSpell(line.substring(3));
+        } else if (line.startsWith("SPK")) {
+            setSpellsKnown(Integer.parseInt(line.substring(3, 4)), Integer.parseInt(line.substring(4)));
+        }
     }
     
     public void addName(String name) {
@@ -51,42 +71,89 @@ public class CharacterClass {
     }
     
     public void addSavingThrow(String save) {
-        this.savingthrowlist.add(save);
+        this.savingthrowList.add(save);
     }
     
     public void addProficiency(String proficiency) {
-        this.proficiencylist.add(proficiency);
+        this.proficiencyList.add(proficiency);
     }
     
-    public void addEquipment(String equipment) {
-        this.equipmentlist.add(equipment);
+    public void addEquipmentSkillOrFeature(String equipment) {
+        this.equipmentSkillsAndFeaturesList.add(equipment);
     }
     
-    public void addSkill(String skill) {
-        this.skillist.add(skill);
+    public void addSpell(String spell) {
+        this.spellList.add(spell);
     }
     
-    public void addFeature(String feature) {
-        this.featurelist.add(feature);
+    public void setSpellsKnown(Integer cantrips, Integer spells) {
+        this.cantripsKnown = cantrips;
+        this.spellsKnown = spells;
     }
     
     public List<String> getSavingThrows() {
-        return this.savingthrowlist;
+        return this.savingthrowList;
     }
     
     public List<String> getProficiencies() {
-        return this.proficiencylist;
+        return this.proficiencyList;
     }
     
     public List<String> getEquipment() {
-        return this.equipmentlist;
+        List<String> equipment = new ArrayList<>();
+        for (String e : this.equipmentSkillsAndFeaturesList) {
+            if (e.startsWith("EQU")) {
+                equipment.add(e.substring(3));
+            }
+        }
+        return equipment;
     }
     
     public List<String> getSkills() {
-        return this.skillist;
+        List<String> skills = new ArrayList<>();
+        for (String s : this.equipmentSkillsAndFeaturesList) {
+            if (s.startsWith("SKI")) {
+                skills.add(s.substring(3));
+            }
+        }
+        return skills;
     }
     
     public List<String> getFeatures() {
-        return this.featurelist;
+        List<String> features = new ArrayList<>();
+        for (String f : this.equipmentSkillsAndFeaturesList) {
+            if (f.startsWith("FEA")) {
+                features.add(f.substring(3));
+            }
+        }
+        return features;
+    }
+    
+    public List<String> getCantrips() {
+        List<String> cantrips = new ArrayList<>();
+        for (String c : this.spellList) {
+            if (c.startsWith("0")) {
+                cantrips.add(c);
+            }
+        }
+        return cantrips;
+    }
+    
+    public List<String> getSpells() {
+        List<String> spells = new ArrayList<>();
+        for (String s : this.spellList) {
+            if (s.startsWith("1")) {
+                spells.add(s);
+            }
+        }
+        return spells;
+    }
+    
+    public Integer getCantripsKnown() {
+        return this.cantripsKnown;
+    }
+    
+    public Integer getSpellsKnown() {
+        return this.spellsKnown;
     }
 }

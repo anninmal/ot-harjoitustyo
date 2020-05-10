@@ -11,23 +11,35 @@ public class Background {
     
     private String name;
     private Integer gp;
-    private List<String> proficiencylist;
-    private List<String> equipmentlist;
-    private List<String> skillist;
+    private List<String> proficiencyList;
+    private List<String> equipmentList;
+    private List<String> skillList;
     private String feature;
-    private List<String> personalitylist;
-    private List<String> ideallist;
-    private List<String> bondlist;
-    private List<String> flawlist;
+    private List<String> characteristicList;
     
     public Background() {
-        this.proficiencylist = new ArrayList<>();
-        this.equipmentlist = new ArrayList<>();
-        this.skillist = new ArrayList<>();
-        this.personalitylist = new ArrayList<>();
-        this.ideallist = new ArrayList<>();
-        this.bondlist = new ArrayList<>();
-        this.flawlist = new ArrayList<>();
+        this.proficiencyList = new ArrayList<>();
+        this.equipmentList = new ArrayList<>();
+        this.skillList = new ArrayList<>();
+        this.characteristicList = new ArrayList<>();
+    }
+    
+    public void sortBackgroundInfo(String line) {
+        if (line.startsWith("NAM")) {
+            addName(line.substring(3));
+        } else if (line.startsWith("GOP")) {
+            addGP(Integer.parseInt(line.substring(3)));
+        } else if (line.startsWith("FEA")) {
+            setFeature(line.substring(3));
+        } else if (line.startsWith("SKI")) {
+            addSkill(line.substring(3));
+        } else if (line.startsWith("PRO")) {
+            addProficiency(line.substring(3));
+        } else if (line.startsWith("EQU")) {
+            addEquipment(line.substring(3));
+        } else if (line.startsWith("PER") || line.startsWith("IDE") || line.startsWith("BON") || line.startsWith("FLA")) {
+            addCharacteristic(line);
+        }
     }
     
     public void addName(String name) {
@@ -39,35 +51,23 @@ public class Background {
     }
     
     public void addProficiency(String proficiency) {
-        this.proficiencylist.add(proficiency);
+        this.proficiencyList.add(proficiency);
     }
     
     public void addEquipment(String equipment) {
-        this.equipmentlist.add(equipment);
+        this.equipmentList.add(equipment);
     }
     
     public void addSkill(String skill) {
-        this.skillist.add(skill);
+        this.skillList.add(skill);
     }
     
     public void setFeature(String feature) {
         this.feature = feature;
     }
     
-    public void addPersonalityTrait(String personalitytrait) {
-        this.personalitylist.add(personalitytrait);
-    }
-    
-    public void addIdeal(String ideal) {
-        this.ideallist.add(ideal);
-    }
-    
-    public void addBond(String bond) {
-        this.bondlist.add(bond);
-    }
-    
-    public void addFlaw(String flaw) {
-        this.flawlist.add(flaw);
+    public void addCharacteristic(String characteristic) {
+        this.characteristicList.add(characteristic);
     }
     
     public String getName() {
@@ -79,15 +79,15 @@ public class Background {
     }
     
     public List<String> getProficiencies() {
-        return this.proficiencylist;
+        return this.proficiencyList;
     }
     
     public List<String> getEquipment() {
-        return this.equipmentlist;
+        return this.equipmentList;
     }
     
     public List<String> getSkills() {
-        return this.skillist;
+        return this.skillList;
     }
     
     public String getFeature() {
@@ -95,18 +95,42 @@ public class Background {
     }
     
     public List<String> getPersonalityTraits() {
-        return this.personalitylist;
+        List<String> personalityTraits = new ArrayList<>();
+        for (String p : this.characteristicList) {
+            if (p.startsWith("PER")) {
+                personalityTraits.add(p.substring(3));
+            }
+        }
+        return personalityTraits;
     }
     
     public List<String> getIdeals() {
-        return this.ideallist;
+        List<String> ideals = new ArrayList<>();
+        for (String i : this.characteristicList) {
+            if (i.startsWith("IDE")) {
+                ideals.add(i.substring(3));
+            }
+        }
+        return ideals;
     }
     
     public List<String> getBonds() {
-        return this.bondlist;
+        List<String> bonds = new ArrayList<>();
+        for (String b : this.characteristicList) {
+            if (b.startsWith("BON")) {
+                bonds.add(b.substring(3));
+            }
+        }
+        return bonds;
     }
     
     public List<String> getFlaws() {
-        return this.flawlist;
+        List<String> flaws = new ArrayList<>();
+        for (String f : this.characteristicList) {
+            if (f.startsWith("FLA")) {
+                flaws.add(f.substring(3));
+            }
+        }
+        return flaws;
     }
 }

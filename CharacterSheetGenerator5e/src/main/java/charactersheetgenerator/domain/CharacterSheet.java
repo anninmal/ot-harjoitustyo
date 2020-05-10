@@ -75,18 +75,16 @@ public class CharacterSheet {
         generateAbilityScoreModifiers();
         assignEquipment();
         assignProficiencies();
-        assignSkillMarkers();
+        assignProficiencyMarkers();
         assignSavesAndSkills();
+        assignSpells();
     }
     
     /**
-     * Method calls for the race files to be read and stores the created instances in a list.
+     * Method calls for the race file to be read and stores the created instances in a list.
      */
     public void createRaces() {
-        String[] races = {"/races/hilldwarf.txt", "/races/mountaindwarf.txt", "/races/tiefling.txt"};
-        for (int i = 0; i < races.length; i++) {
-            this.raceList.add(reader.loadRace(races[i]));
-        }
+        this.raceList = reader.loadRaces("/races/races.txt");
     }
     
     public List<Race> getRaces() {
@@ -98,13 +96,10 @@ public class CharacterSheet {
     }
     
     /**
-     * Method calls for the class files to be read and stores the created instances in a list.
+     * Method calls for the class file to be read and stores the created instances in a list.
      */
     public void createClasses() {
-        String[] classes = {"/classes/fighter.txt", "/classes/rogue.txt"};
-        for (int i = 0; i < classes.length; i++) {
-            this.cclassList.add(reader.loadClass(classes[i]));
-        }
+        this.cclassList = reader.loadClasses("/classes/classes.txt");
     }
     
     public List<CharacterClass> getClasses() {
@@ -116,13 +111,10 @@ public class CharacterSheet {
     }
     
     /**
-     * Method calls for the background files to be read and stores the created instances in a list.
+     * Method calls for the background file to be read and stores the created instances in a list.
      */
     public void createBackgrounds() {
-        String[] bgs = {"/backgrounds/acolyte.txt", "/backgrounds/charlatan.txt", "/backgrounds/criminal.txt", "/backgrounds/entertainer.txt"};
-        for (int i = 0; i < bgs.length; i++) {
-            this.backgroundList.add(reader.loadBackground(bgs[i]));
-        }
+        this.backgroundList = reader.loadBackgrounds("/backgrounds/backgrounds.txt");
     }
     
     public List<Background> getBackgrounds() {
@@ -248,14 +240,23 @@ public class CharacterSheet {
     }
     
     /**
-     * Method generates 6 random ability scores based on 4 randomly generated numbers from 1 to 6,
-     * with the smallest number removed and the remaining 3 added together, and stores the numbers in a list variable.
+     * Method clears any existing ability scores, then rolls new ability scores.
      */
     public void generateAbilityScores() {
         this.abilityScores.clear();
+        List<Integer> rolls = new ArrayList<>();
+        rollAbilityScores(rolls);
+    }
+    
+    /**
+     * Method generates 6 random ability scores based on 4 randomly generated numbers from 1 to 6,
+     * with the smallest number removed and the remaining 3 added together, and stores the numbers in a list variable.
+     * 
+     * @param   rolls   List to store rolls in
+     */
+    public void rollAbilityScores(List<Integer> rolls) {
         int score = 0;
         int ind = 1;
-        List<Integer> rolls = new ArrayList<>();
         while (this.abilityScores.size() < 6) {
             ind = 1;
             while (ind < 5) {
@@ -275,20 +276,27 @@ public class CharacterSheet {
     }
     
     /**
+     * Method clears any existing ability scores, then assigns a default value of 10 to all ability scores,
+     * method is intended for testing purposes.
+     */
+    public void generateDefaultAbilityScores() {
+        this.abilityScores.clear();
+        for (int i = 0; i < 6; i++) {
+            this.abilityScores.add(10);
+        }
+    }
+    
+    /**
      * Method applies the appropriate ability score bonuses for each race.
      */
     public void applyRacialBonuses() {
-        if (!this.raceList.isEmpty()) {
-            if (this.race.getName().equals("Hill Dwarf")) {
-                this.abilityScores.set(2, (this.abilityScores.get(2) + 2));
-                this.abilityScores.set(4, (this.abilityScores.get(4) + 1));
-            } else if (this.race.getName().equals("Mountain Dwarf")) {
-                this.abilityScores.set(2, (this.abilityScores.get(2) + 2));
-                this.abilityScores.set(4, (this.abilityScores.get(0) + 2));
-            } else if (this.race.getName().equals("Tiefling")) {
-                this.abilityScores.set(5, (this.abilityScores.get(5) + 2));
-                this.abilityScores.set(3, (this.abilityScores.get(3) + 1));
-            }
+        if (this.race.getRacialBonuses() != null) {
+            for (Integer ind : this.race.getRacialBonuses().keySet()) {
+                this.abilityScores.set(ind, this.abilityScores.get(ind) + this.race.getRacialBonuses().get(ind));
+                if (this.abilityScores.get(ind) > 20) {
+                    this.abilityScores.set(ind, 20);
+                }
+            }    
         }
     }
     
@@ -298,26 +306,22 @@ public class CharacterSheet {
      */
     public void generateAbilityScoreModifiers() {
         this.abilityScoreModifiers.clear();
-        for (int as: this.abilityScores) {
-            if (as == 4 || as == 5) {
-                this.abilityScoreModifiers.add(-3);
-            } else if (as == 6 || as == 7) {
-                this.abilityScoreModifiers.add(-2);
-            } else if (as == 8 || as == 9) {
-                this.abilityScoreModifiers.add(-1);
-            } else if (as == 10 || as == 11) {
-                this.abilityScoreModifiers.add(0);
-            } else if (as == 12 || as == 13) {
-                this.abilityScoreModifiers.add(1);
-            } else if (as == 14 || as == 15) {
-                this.abilityScoreModifiers.add(2);
-            } else if (as == 16 || as == 17) {
-                this.abilityScoreModifiers.add(3);
-            } else if (as == 18 || as == 19) {
-                this.abilityScoreModifiers.add(4);
-            } else {
-                this.abilityScoreModifiers.add(5);
+        int listInd = 0;
+        int scoreInd = 4;
+        int modInd = -3;
+        while (listInd < 6) {
+            scoreInd = 4;
+            modInd = -3;
+            while (scoreInd <= 20) {
+                if (this.abilityScores.get(listInd) == scoreInd) {
+                    this.abilityScoreModifiers.add(modInd);
+                } else if (this.abilityScores.get(listInd) == (scoreInd + 1)) {
+                    this.abilityScoreModifiers.add(modInd);
+                }
+                scoreInd = scoreInd + 2;
+                modInd++;
             }
+            listInd++;
         }
     }
     
@@ -414,130 +418,118 @@ public class CharacterSheet {
         return features;
     }
     
+    public void assignSpells() {
+        this.spells.clear();
+        if (this.cclass.getCantripsKnown() != null) {
+            for (int i = 0; i < this.cclass.getCantripsKnown();) {
+                int ind = this.random.nextInt(this.cclass.getCantrips().size());
+                if (!this.spells.contains("0" + this.cclass.getCantrips().get(ind))) {
+                    this.spells.add("0" + this.cclass.getCantrips().get(ind));
+                    i++;
+                }
+            }
+        }
+        if (this.cclass.getSpellsKnown() != null) {
+            for (int i = 0; i < this.cclass.getSpellsKnown();) {
+                int ind = this.random.nextInt(this.cclass.getSpells().size());
+                if (!this.spells.contains("1" + this.cclass.getSpells().get(ind))) {
+                    this.spells.add("1" + this.cclass.getSpells().get(ind));
+                    i++;
+                }
+            }
+        }
+    }
+    
+    public String getCantrips() {
+        String cantrips = "";
+        if (this.cclass.getCantripsKnown() == null) {
+            cantrips = "-";
+        } else {
+            for (int i = 0; i < this.cclass.getCantripsKnown(); i++) {
+                if (this.spells.get(i).startsWith("0")) {
+                    if (i == 0) {
+                        cantrips = cantrips + this.spells.get(i).substring(2);
+                    } else {
+                        cantrips = cantrips + "\n" + this.spells.get(i).substring(2);
+                    }
+                }
+            }
+        }
+        return addRacialSpells(cantrips);
+    }
+    
+    public String addRacialSpells(String spells) {
+        if (this.race.getName().equals("Tiefling")) {
+            spells = spells + "\nThaumaturgy";
+        }
+        if (spells.length() > 1 && spells.contains("-")) {
+            spells = spells.substring(2);
+        }
+        return spells;
+    }
+    
+    public String getLevel1Spells() {
+        String l1Spells = "";
+        boolean indicator = false;
+        if (this.cclass.getSpellsKnown() == null) {
+            l1Spells = "-";
+        } else {
+            for (int i = 0; i < this.cclass.getSpellsKnown(); i++) {
+                if (this.spells.get(i).startsWith("1")) {
+                    if (indicator == false) {
+                        l1Spells = l1Spells + this.spells.get(i).substring(2);
+                        indicator = true;
+                    } else {
+                        l1Spells = l1Spells + "\n" + this.spells.get(i).substring(2);
+                    }
+                }
+            }
+        }
+        return l1Spells;
+    }
+    
     /**
      * Creates a list of visual markers detailing which saving throws and skills a character is proficient in,
      * based on the character's background and class.
      */
-    public void assignSkillMarkers() {
+    public void assignProficiencyMarkers() {
         this.skillMarkers.clear();
+        String[] abilities = {"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"};
+        String[] skills = {"Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"};
         for (int i = 0; i < 24; i++) {
             this.skillMarkers.add("  ");
         }
-        if (this.cclass.getSavingThrows().contains("Strength")) {
-            this.skillMarkers.set(0, "o");
+        assignSavingThrowProficiencyMarkers(abilities);
+        if (this.cclass.getSkills().size() > 0) {
+            int ind = 0;
+            int ind2 = 0;
+            assignSkillProficiencyMarkers(skills, ind, ind2);    
         }
-        if (this.cclass.getSavingThrows().contains("Dexterity")) {
-            this.skillMarkers.set(1, "o");
+        
+    }
+    
+    public void assignSavingThrowProficiencyMarkers(String[] abilities) {
+        for (int i = 0; i < 6; i++) {
+            if (this.cclass.getSavingThrows().contains(abilities[i])) {
+                this.skillMarkers.set(i, "o");
+            }
         }
-        if (this.cclass.getSavingThrows().contains("Constitution")) {
-            this.skillMarkers.set(2, "o");
+    }
+    
+    public void assignSkillProficiencyMarkers(String[] skills, Integer ind, Integer ind2) {
+        for (int i = 0; i < 18; i++) {
+            if (this.background.getSkills().contains(skills[i])) {
+                this.skillMarkers.set((i + 6), "o");
+            }
         }
-        if (this.cclass.getSavingThrows().contains("Intelligence")) {
-            this.skillMarkers.set(3, "o");
-        }
-        if (this.cclass.getSavingThrows().contains("Wisdom")) {
-            this.skillMarkers.set(4, "o");
-        }
-        if (this.cclass.getSavingThrows().contains("Charisma")) {
-            this.skillMarkers.set(5, "o");
-        }   
-        if (this.background.getSkills().contains("Acrobatics")) {
-            this.skillMarkers.set(6, "o");
-        }
-        if (this.background.getSkills().contains("Animal Handling")) {
-            this.skillMarkers.set(7, "o");
-        }
-        if (this.background.getSkills().contains("Arcana")) {
-            this.skillMarkers.set(8, "o");
-        }
-        if (this.background.getSkills().contains("Athletics")) {
-            this.skillMarkers.set(9, "o");
-        }
-        if (this.background.getSkills().contains("Deception")) {
-            this.skillMarkers.set(10, "o");
-        }
-        if (this.background.getSkills().contains("History")) {
-            this.skillMarkers.set(11, "o");
-        }
-        if (this.background.getSkills().contains("Insight")) {
-            this.skillMarkers.set(12, "o");
-        }
-        if (this.background.getSkills().contains("Intimidation")) {
-            this.skillMarkers.set(13, "o");
-        }
-        if (this.background.getSkills().contains("Investigation")) {
-            this.skillMarkers.set(14, "o");
-        }
-        if (this.background.getSkills().contains("Medicine")) {
-            this.skillMarkers.set(15, "o");
-        }
-        if (this.background.getSkills().contains("Nature")) {
-            this.skillMarkers.set(16, "o");
-        }
-        if (this.background.getSkills().contains("Perception")) {
-            this.skillMarkers.set(17, "o");
-        }
-        if (this.background.getSkills().contains("Performance")) {
-            this.skillMarkers.set(18, "o");
-        }
-        if (this.background.getSkills().contains("Persuasion")) {
-            this.skillMarkers.set(19, "o");
-        }
-        if (this.background.getSkills().contains("Religion")) {
-            this.skillMarkers.set(20, "o");
-        }
-        if (this.background.getSkills().contains("Sleight of Hand")) {
-            this.skillMarkers.set(21, "o");
-        }
-        if (this.background.getSkills().contains("Stealth")) {
-            this.skillMarkers.set(22, "o");
-        }
-        if (this.background.getSkills().contains("Survival")) {
-            this.skillMarkers.set(23, "o");
-        }
-        int ind = 0;
-        int ind2 = 0;
-        while (ind < this.cclass.getSkillNumber()) {
+        for (int j = 0; j < this.cclass.getSkillNumber(); j++) {
             ind2 = this.random.nextInt(this.cclass.getSkills().size());
             if (!this.background.getSkills().contains(this.cclass.getSkills().get(ind2))) {
-                if (this.cclass.getSkills().get(ind2).equals("Acrobatics")) {
-                    this.skillMarkers.set(6, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Animal Handling")) {
-                    this.skillMarkers.set(7, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Arcana")) {
-                    this.skillMarkers.set(8, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Athletics")) {
-                    this.skillMarkers.set(9, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Deception")) {
-                    this.skillMarkers.set(10, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("History")) {
-                    this.skillMarkers.set(11, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Insight")) {
-                    this.skillMarkers.set(12, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Intimidation")) {
-                    this.skillMarkers.set(13, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Investigation")) {
-                    this.skillMarkers.set(14, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Medicine")) {
-                    this.skillMarkers.set(15, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Nature")) {
-                    this.skillMarkers.set(16, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Perception")) {
-                    this.skillMarkers.set(17, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Performance")) {
-                    this.skillMarkers.set(18, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Persuasion")) {
-                    this.skillMarkers.set(19, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Religion")) {
-                    this.skillMarkers.set(20, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Sleight of Hand")) {
-                    this.skillMarkers.set(21, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Stealth")) {
-                    this.skillMarkers.set(22, "o");
-                } else if (this.cclass.getSkills().get(ind2).equals("Survival")) {
-                    this.skillMarkers.set(23, "o");
-                } 
-                ind++;
+                for (int i = 0; i < 18; i++) {
+                    if (this.cclass.getSkills().get(ind2).equals(skills[i])) {
+                        this.skillMarkers.set((i + 6), "o");
+                    }
+                }
             }
         }
     }
@@ -549,125 +541,13 @@ public class CharacterSheet {
      */
     public void assignSavesAndSkills() {
         this.savesAndSkills.clear();
-        if (this.skillMarkers.get(0).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(0) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(0));
-        }
-        if (this.skillMarkers.get(1).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(1) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(1));
-        }
-        if (this.skillMarkers.get(2).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(2) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(2));
-        }
-        if (this.skillMarkers.get(3).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3));
-        }
-        if (this.skillMarkers.get(4).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4));
-        }
-        if (this.skillMarkers.get(5).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5));
-        }
-        if (this.skillMarkers.get(6).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(1) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(1));
-        }
-        if (this.skillMarkers.get(7).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4));
-        }
-        if (this.skillMarkers.get(8).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3));
-        }
-        if (this.skillMarkers.get(9).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(0) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(0));
-        }
-        if (this.skillMarkers.get(10).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5));
-        }
-        if (this.skillMarkers.get(11).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3));
-        }
-        if (this.skillMarkers.get(12).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4));
-        }
-        if (this.skillMarkers.get(13).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5));
-        }
-        if (this.skillMarkers.get(14).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3));
-        }
-        if (this.skillMarkers.get(15).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4));
-        }
-        if (this.skillMarkers.get(16).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3));
-        }
-        if (this.skillMarkers.get(17).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4));
-        }
-        if (this.skillMarkers.get(18).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5));
-        }
-        if (this.skillMarkers.get(19).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(5));
-        }
-        if (this.skillMarkers.get(20).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(3));
-        }
-        if (this.skillMarkers.get(21).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(1) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(1));
-        }
-        if (this.skillMarkers.get(22).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(1) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(1));
-        }
-        if (this.skillMarkers.get(23).equals("o")) {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4) + 2);
-        } else {
-            this.savesAndSkills.add(this.abilityScoreModifiers.get(4));
+        Integer[] abilityIndexes = {0, 1, 2, 3, 4, 5, 1 , 4, 3, 0, 5, 3, 4, 5, 3, 4, 3, 4, 5, 5, 3, 1, 1, 4};
+        for (int i = 0; i < 24; i++) {
+            if (this.skillMarkers.get(i).equals("o")) {
+                this.savesAndSkills.add(this.abilityScoreModifiers.get(abilityIndexes[i]) + 2);
+            } else {
+                this.savesAndSkills.add(this.abilityScoreModifiers.get(abilityIndexes[i]));
+            }
         }
     }
     

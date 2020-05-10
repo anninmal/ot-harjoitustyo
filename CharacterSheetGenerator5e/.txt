@@ -1,0 +1,91 @@
+
+Hill Dwarf | Fighter 1
+Criminal | Chaotic Evil
+
+STR 14 [2] / DEX 11 [0] / CON 17 [3] / INT 10 [0] / WIS 16 [3] / CHA 14 [2]
+
+Hit Points: 13
+Hit Dice: 1d10
+
+Proficiency Bonus: 2
+Armor Class: 10 (+ armor)
+Initiative: 2
+Speed: 25
+
+Saving Throws:
+o 4 Strength
+   0 Dexterity
+o 5 Constitution
+   0 Intelligence
+   3 Wisdom
+   2 Charisma
+
+Skills:
+   0 Acrobatics (Dex)
+   3 Animal Handling (Wis)
+   0 Arcana (Int)
+   2 Athletics (Str)
+o 4 Deception (Cha)
+o 2 History (Int)
+   3 Insight (Wis)
+o 4 Intimidation (Cha)
+   0 Investigation (Int)
+   3 Medicine (Wis)
+   0 Nature (Int)
+   3 Perception (Wis)
+   2 Performance (Cha)
+   2 Persuasion (Cha)
+   0 Religion (Int)
+   0 Sleight of Hand (Dex)
+o 2 Stealth (Dex)
+   3 Survival (Wis)
+
+Proficiencies:
+one type of gaming set, thieves' tools, all armor, shields, simple weapons, martial weapons, battleaxe, handaxe, light hammer, warhammer, artisan's tools, Common, Dwarven
+
+Equipment:
+chain mail OR leather armor + longbow + 20 arrows, martial weapon + shield OR two martial weapons, light crossbow + 20 bolts OR two handaxes, dungeoneer's pack OR exporer's pack, crowbar, set of dark common clothes including a hood
+
+CP:
+SP:
+GP: 15
+EP:
+PP:
+
+Personality Traits:
+I blow up at the slightest insult.
+
+Ideals:
+Greed. I will do whatever it takes to become wealthy.
+
+Bonds:
+I'm trying to pay off an old debt I owe to a generous benefactor.
+
+Flaws:
+When faced with a choice between money and my friends, I usually choose the money.
+
+Features & Traits:
+[Darkvision] Accustomed to life Underground, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can't discern color in Darkness, only Shades of Gray.
+
+[Dwarven Resilience] You have advantage on Saving Throws against poison, and you have Resistance against poison damage.
+
+[Dwarven Combat Training] You have proficiency with the Battleaxe, Handaxe, Light Hammer, and Warhammer.
+
+[Tool Proficiency] You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.
+
+[Stonecunning] Whenever you make an Intelligence (History) check related to the Origin of stonework, you are considered proficient in the History skill and add double your Proficiency Bonus to the check, instead of your normal Proficiency Bonus.
+
+[Dwarven Toughness] Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
+
+[Fighting Style] You adopt a particular style of fighting as your specialty. Choose a Fighting Style from the list of optional features. You can't take the same Fighting Style option more than once, even if you get to choose again.
+
+[Second Wind] You have a limited well of stamina that you can draw on to protect yourself from harm. On Your Turn, you can use a Bonus Action to regain Hit Points equal to 1d10 + your Fighter level. Once you use this feature, you must finish a short or Long Rest before you can use it again.
+
+[Criminal Contact] You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you.
+
+Spells:
+0:
+-
+
+1:
+-
