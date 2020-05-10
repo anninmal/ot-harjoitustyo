@@ -4,7 +4,12 @@ Lataa suoritettava jar tiedosto [CSG5e.jar] (lisää linkki...)
 
 ## Konfigurointi
 
+Ohjelman oletuksena on, että:
+- hakemistoissa */scr/main/resources/races* on tiedosto *races.txt*
+- hakemistoissa */scr/main/resources/classes* on tiedosto *classes.txt*
+- hakemistoissa */scr/main/resources/backgrounds* on tiedosto *backgrounds.txt*
 
+Tiedostot sisältävät sovelluksen tarvitseman tiedon rotujen, luokkien ja taustojen ominaisuuksista. Uusia rotuja, luokkia ja taustoja voi lisätä, kunhan noudattaa samaa formaattia, kuin muu tiedostoissa oleva tieto.
 
 ## Ohjelman käynnistäminen
 
@@ -26,3 +31,9 @@ Lomakenäkymässä näkyy generoitu hahmolomake.
 Samoilla asetuksilla voi generoida uuden lomakkeen painamalla "Generate!"-nappia uudestaan.
 
 Aloitusnäkymään, missä voi muokata valintojaan, pääsee painamalla nappia "Back".
+
+Jos haluaa tallentaa generoimansa hahmolomakkeen, onnistuu se painamalla nappia "Save Sheet".
+
+<img src="https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/savesheet.png">
+
+Nappia painettaessa sovellus antaa käyttäjän syöttää haluamansa nimen tiedostolle. Jos nimikenttä jätetään tyhjäksi, sovellus ei tallenna tiedostoa. Tiedosto luodaan painamalla nappia "Save". Tiedosto löytyy sovelluksen päähakemistotosta.
