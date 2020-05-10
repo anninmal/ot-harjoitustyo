@@ -26,6 +26,11 @@ public class CharacterClass {
         this.spellList = new ArrayList<>();
     }
     
+    /**
+     * Method sorts given line of text and stores it in the appropriate list or variable.
+     * 
+     * @param   line   String to sort
+     */
     public void sortClassInfo(String line) {
         if (line.startsWith("NAM")) {
             addName(line.substring(3));

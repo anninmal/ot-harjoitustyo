@@ -386,7 +386,14 @@ public class CharacterSheet {
         return features;
     }
     
-    public void assignSpells(List<String> list, Integer known, List<String> spells) {
+    /**
+     * Method assigns the amount of items known from a given list and saves them to a given list.
+     * 
+     * @param   list   list from which to pick items
+     * @param   known   number of items to pick
+     * @param   spells   list to store picked items in
+     */
+        public void assignSpells(List<String> list, Integer known, List<String> spells) {
         list.clear();
         if (known != null) {
             for (int i = 0; i < known;) {
@@ -399,6 +406,11 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method constructs a string based on the list of cantrips and racial cantrips.
+     * 
+     * @return String with each known cantrip on its own line
+     */
     public String getCantrips() {
         String cantrips = "";
         if (this.cclass.getCantripsKnown() == null) {
@@ -415,6 +427,12 @@ public class CharacterSheet {
         return addRacialSpells(cantrips);
     }
     
+    /**
+     * Method adds any necessary racial spells to list of cantrips.
+     * 
+     * @param   spells   list to add to
+     * @return revised list that now includes racial cantrip if applicable
+     */
     public String addRacialSpells(String spells) {
         if (this.race.getName().equals("Tiefling")) {
             spells = spells + "\nThaumaturgy";
@@ -425,6 +443,11 @@ public class CharacterSheet {
         return spells;
     }
     
+    /**
+     * Method constructs a string based on the list of level 1 spells.
+     * 
+     * @return String with each known spell on its own line
+     */
     public String getLevel1Spells() {
         String l1Spells = "";
         if (this.cclass.getSpellsKnown() == null) {
@@ -442,7 +465,7 @@ public class CharacterSheet {
     }
     
     /**
-     * Creates a list of visual markers detailing which saving throws and skills a character is proficient in,
+     * Method creates a list of visual markers detailing which saving throws and skills a character is proficient in,
      * based on the character's background and class.
      */
     public void assignProficiencyMarkers() {
@@ -459,6 +482,11 @@ public class CharacterSheet {
         
     }
     
+    /**
+     * Method assigns appropriate markers for a character's saving throws.
+     * 
+     * @param   abilities   String[] containing names of abilities
+     */
     public void assignSavingThrowProficiencyMarkers(String[] abilities) {
         for (int i = 0; i < 6; i++) {
             if (this.cclass.getSavingThrows().contains(abilities[i])) {
@@ -467,6 +495,13 @@ public class CharacterSheet {
         }
     }
     
+    /**
+     * Method Assigns appropriate markers for a character's skill proficiencies.
+     * 
+     * @param   skills  String[] containing names of skills
+     * @param   ind   index
+     * @param   ind2   index
+     */
     public void assignSkillProficiencyMarkers(String[] skills, Integer ind, Integer ind2) {
         for (int i = 0; i < 18; i++) {
             if (this.background.getSkills().contains(skills[i])) {

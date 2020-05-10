@@ -4,6 +4,10 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 
+/**
+ * Class responsible for formatting and writing text files.
+ */
+
 public class SheetSaver {
     
     private String path;
@@ -12,6 +16,17 @@ public class SheetSaver {
         this.path = filePath;
     }
     
+    /**
+     * Method that calls for a formatted String to be written to a file.
+     * 
+     * @param   sheet   Character sheet to format
+     * @param   name   Name of the character
+     * @param   personalityTrait   The character's personality trait
+     * @param   ideal   The character's ideal
+     * @param   bond   The character's bond
+     * @param   flaw   The character's flaw
+     * @return   boolean value denoting success (true) or failure (false)
+     */
     public boolean saveSheet(CharacterSheet sheet, String name, String personalityTrait, String ideal, String bond, String flaw) {
         try {
             writeToFile(buildTextSheet(sheet, name, personalityTrait, ideal, bond, flaw));
@@ -21,6 +36,17 @@ public class SheetSaver {
         }
     }
     
+    /**
+     * Method formats a String based on the given information
+     * 
+     * @param   sheet   Character sheet to format
+     * @param   name   Name of the character
+     * @param   personalityTrait   The character's personality trait
+     * @param   ideal   The character's ideal
+     * @param   bond   The character's bond
+     * @param   flaw   The character's flaw
+     * @return 
+     */
     public String buildTextSheet(CharacterSheet sheet, String name, String personalityTrait, String ideal, String bond, String flaw) {
         String sheetText = name + "\n" + sheet.getRace().getName() + " | " + sheet.getCClass().getName() + " 1\n" + sheet.getBackground().getName() + " | " + sheet.getAlignment() + "\n\n" + 
                 "STR " + sheet.getAbilityScores().get(0) + " [" + sheet.getAbilityScoreModifiers().get(0) + "] / DEX " + sheet.getAbilityScores().get(1) + " [" + sheet.getAbilityScoreModifiers().get(1) + "] / CON " + sheet.getAbilityScores().get(2) + " [" + sheet.getAbilityScoreModifiers().get(2) + "] / INT " + sheet.getAbilityScores().get(3) + " [" + sheet.getAbilityScoreModifiers().get(3) + "] / WIS " + sheet.getAbilityScores().get(4) + " [" + sheet.getAbilityScoreModifiers().get(4) + "] / CHA " + sheet.getAbilityScores().get(5) + " [" + sheet.getAbilityScoreModifiers().get(5) + "]\n\n" +
@@ -33,6 +59,12 @@ public class SheetSaver {
         return sheetText;
     }
     
+    /**
+     * Method responsible for writing the file
+     * 
+     * @param   textLine   String to write
+     * @throws IOException 
+     */
     public void writeToFile(String textLine) throws IOException {
         FileWriter writer = new FileWriter(this.path, false);
         PrintWriter printLine = new PrintWriter(writer);

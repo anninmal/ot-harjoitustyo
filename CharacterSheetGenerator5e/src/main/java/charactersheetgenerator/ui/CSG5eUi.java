@@ -50,6 +50,7 @@ public class CSG5eUi extends Application {
     public void createCharacterSheet() {
         HBox sheetTopField1 = new HBox(20);
         HBox sheetTopField2 = new HBox(20);
+        HBox sheetTopField3 = new HBox(20);
         VBox sheetColumn1 = new VBox(5);
         VBox sheetColumn2 = new VBox(5);
         VBox sheetColumn3 = new VBox(5);
@@ -62,6 +63,7 @@ public class CSG5eUi extends Application {
         columns.getChildren().add(sheetColumn4);
         fullSheet.getChildren().add(sheetTopField1);
         fullSheet.getChildren().add(sheetTopField2);
+        fullSheet.getChildren().add(sheetTopField3);
         fullSheet.getChildren().add(columns);
         
         Label sheetClassLabel = new Label(this.characterSheet.getCClass().getName() + " 1");
@@ -73,13 +75,13 @@ public class CSG5eUi extends Application {
         sheetBackgroundLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
         sheetRaceLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
         sheetAlignmentLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
-        sheetNameLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
+        sheetNameLabel.setFont(Font.font("Arial", FontWeight.BOLD, 18));
         
-        sheetTopField1.getChildren().add(sheetClassLabel);
-        sheetTopField1.getChildren().add(sheetBackgroundLabel);
         sheetTopField1.getChildren().add(sheetNameLabel);
-        sheetTopField2.getChildren().add(sheetRaceLabel);
-        sheetTopField2.getChildren().add(sheetAlignmentLabel);
+        sheetTopField2.getChildren().add(sheetClassLabel);
+        sheetTopField2.getChildren().add(sheetBackgroundLabel);
+        sheetTopField3.getChildren().add(sheetRaceLabel);
+        sheetTopField3.getChildren().add(sheetAlignmentLabel);
         
         Label strLabel = new Label("Strength");
         strLabel.setFont(Font.font("Arial", FontWeight.BOLD, 12));
@@ -313,7 +315,6 @@ public class CSG5eUi extends Application {
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(fullSheet);
         fullView.getChildren().add(scrollPane);
-//        fullView.getChildren().add(fullSheet);
         fullView.getChildren().add(buttons);
         fullView.getChildren().add(saveInfo);
         
