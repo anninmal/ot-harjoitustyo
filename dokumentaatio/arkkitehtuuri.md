@@ -1,22 +1,22 @@
 # Arkkitehtuurikuvaus
 ## Rakenne
-Koodin pakkausrakenne koostuu kahdesta pakkauksesta: *charactersheetgenerator.domain*, ja *charactersheetgenerator.ui*.
+Koodin pakkausrakenne koostuu kahdesta pakkauksesta: [charactersheetgenerator.domain](https://github.com/anninmal/ot-harjoitustyo/tree/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain), ja [charactersheetgenerator.ui](https://github.com/anninmal/ot-harjoitustyo/tree/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/ui).
 
-* *charactersheetgenerator.ui* sisältää käyttöliittymäluokan CSG5eUi. Käyttöliittymä on toteutettu JavaFX:llä.
+* *charactersheetgenerator.ui* sisältää käyttöliittymäluokan [CSG5eUi](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/ui/CSG5eUi.java). Käyttöliittymä on toteutettu JavaFX:llä.
 
 * *charactersheetgenerator.domain* sisältää sovelluksen sovelluslogiikan.
 
 ## Käyttöliittymä
-Luokka charactersheetgenerator.ui.CSG5eUi sisältää käyttöliittymän, joka koostuu aloitusnäkymästä ja lomakenäkymästä. Näkymät on toteutettu erillisinä **Scene**-olioina, joista **stage** näyttää aina jomman kumman. Hahmolomakkeen rakentamisesta vastaa metodi createCharacterSheet, jota redrawCharacterSheet-metodi kutsuu. Metodia kutsutaan aina, kun nappia "Generate!" painetaan jommassa kummassa näkymässä. Ensimmäisessä näkymässä olevia valintoja käytetään jokaisen uuden lomakkeen luomiseen.
+Luokka [charactersheetgenerator.ui.CSG5eUi](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/ui/CSG5eUi.java) sisältää käyttöliittymän, joka koostuu aloitusnäkymästä ja lomakenäkymästä. Näkymät on toteutettu erillisinä **Scene**-olioina, joista **stage** näyttää aina jomman kumman. Hahmolomakkeen rakentamisesta vastaa metodi [createCharacterSheet](https://github.com/anninmal/ot-harjoitustyo/blob/57aa910eae043736aa1aef75669ca9bf28e68c3b/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/ui/CSG5eUi.java#L53), jota [redrawCharacterSheet](https://github.com/anninmal/ot-harjoitustyo/blob/57aa910eae043736aa1aef75669ca9bf28e68c3b/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/ui/CSG5eUi.java#L223)-metodi kutsuu. Metodia kutsutaan aina, kun nappia "Generate!" painetaan jommassa kummassa näkymässä. Ensimmäisessä näkymässä olevia valintoja käytetään jokaisen uuden lomakkeen luomiseen.
 
 Käyttöliittymä tuntee luokan [CharacterSheet](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/CharacterSheet.java), joka vastaa lomakkeen tiedoista ja niiden satunnaistamisesta, ja josta käyttöliittymä poimii kaiken tarvittavan tiedon. [SheetSaver](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/SheetSaver.java)-oliota käyttöliittymä käyttää lomakkeiden tallentamiseen. Käyttöliittymä ei siis vastaa sovelluslogiikasta.
 
 ## Sovelluslogiikka
 Suurimmasta osasta sovelluksen toiminnallisuuksista vastaa luokka CharacterSheet, joka tuntee seuraavat luokat:
-- Race, joka hallitsee rotuihin liittyviä tietoja
-- CharacterClass, joka hallitsee luokiin liittyviä tietoja
-- Background, joka hallitsee taustoihin liittyviä tietoja
-- FileReader, joka vastaa tiedostojen lukemisesta
+- [Race](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/Race.java), joka hallitsee rotuihin liittyviä tietoja
+- [CharacterClass](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/CharacterClass.java), joka hallitsee luokiin liittyviä tietoja
+- [Background](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/Background.java), joka hallitsee taustoihin liittyviä tietoja
+- [FileReader](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/FileReader.java), joka vastaa tiedostojen lukemisesta
 
 CharacterSheet-luokka käyttää FileReader-oliota lukeakseen tiedostoja, joiden tiedot tallennetaan listoihin. Luokka vastaa tietyn tai satunnaisen rodun/luokan/taustan/hengenlaadun valitsemisesta, kykyarvojen satunnaisesta generoimisesta, kykyarvojen ja niihin liittyvän tiedon käsittelystä, muiden satunnaisten piirteiden valitsemisesta, ja käyttöliittymälle sopivien tekstien rakentamisesta.
 
@@ -51,9 +51,9 @@ Jokaista ominaisuutta siis edeltää kolmikirjaiminen koodi, jonka avulla ohjelm
 
 ## Toiminnallisuuksia
 #### Hahmolomakken luominen
-CharacterSheet-luokan kostruktori luo tarvittavat listat ja oliot. setUpSheet-metodi kutsuu FileReader-oliota kolmesti, ja tallentaa palatuetut listat omiin muuttujaiinsa. setUpSheet-metodikutsun yhteydessä myös luodaan hengenlaadut ja tallennetaan ne listamuuttujaan.
+CharacterSheet-luokan kostruktori luo tarvittavat listat ja oliot. [setUpSheet](https://github.com/anninmal/ot-harjoitustyo/blob/57aa910eae043736aa1aef75669ca9bf28e68c3b/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/CharacterSheet.java#L55)-metodi kutsuu FileReader-oliota kolmesti, ja tallentaa palatuetut listat omiin muuttujaiinsa. setUpSheet-metodikutsun yhteydessä myös luodaan hengenlaadut ja tallennetaan ne listamuuttujaan.
 
-generateSheet-metodi vastaa lomakkeen tietojen luomisesta ja arpomisesta. Parametreineä on toivottu rotu, luokka, tausta ja hengenlaatu. null-arvoinen parametri johtaa ominaisuuden satunnaiseen arpomiseen. generateCharacterSheet kutsuu seuraavia metodeja:
+[generateSheet](https://github.com/anninmal/ot-harjoitustyo/blob/57aa910eae043736aa1aef75669ca9bf28e68c3b/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/CharacterSheet.java#L73)-metodi vastaa lomakkeen tietojen luomisesta ja arpomisesta. Parametreineä on toivottu rotu, luokka, tausta ja hengenlaatu. null-arvoinen parametri johtaa ominaisuuden satunnaiseen arpomiseen. generateSheet kutsuu seuraavia metodeja:
 - **pickRace** — asettaa roduksi valitun hahmon rodun, tai arpoo satunnaisen.
 - **pickClass** — asettaa luokaksi valitun hahmon luokan, tai arpoo satunnaisen.
 - **pickBackground** — asettaa taustaksi valitun hahmon taustan, tai arpoo satunnaisen.
