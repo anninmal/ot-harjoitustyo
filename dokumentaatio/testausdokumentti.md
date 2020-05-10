@@ -15,4 +15,4 @@ Sovelluksen testit ovat kattavia. Ainoastaan Main-luokka on vailla testausta.
 ## Järjestelmätestaus
 Sovelluksen mahdollisia virhetilanteita on testattu manuaalisesti antamalla tyhjiä syötteitä ja poistamalla sovelluksen tarvitsemat tiedostot. Tiedostojen puuttuessa, sovelluksen on tarkoitus antaa virheilmoitus tavallisten valintojen sijaan.
 
-Ohjelmaa on testattu Chubbli Linuxilla. Koneesta riippuen, käyttöliittymä voi näyttää hajonneelta, eikä hahmolomaketta näy ollenkaan. Ongelma voidaan korjata esim. vaihtamalla javafx:n [versio 12.0.2](https://github.com/anninmal/ot-harjoitustyo/blob/0246be77cdcb9b9fcc41f4a54bb169ebd46621f6/CharacterSheetGenerator5e/pom.xml#L24) versioksi 11.0.2.
+Ohjelmaa on testattu Chubbli Linuxilla. Koneesta riippuen, käyttöliittymä voi näyttää hajonneelta, eikä hahmolomaketta näy ollenkaan. Ongelma voidaan korjata esim. vaihtamalla [javafx:n versio 12.0.2](https://github.com/anninmal/ot-harjoitustyo/blob/0246be77cdcb9b9fcc41f4a54bb169ebd46621f6/CharacterSheetGenerator5e/pom.xml#L24) versioksi 11.0.2.
