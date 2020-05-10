@@ -12,10 +12,16 @@ Luokka charactersheetgenerator.ui.CSG5eUi sisältää käyttöliittymän, joka k
 Käyttöliittymä tuntee luokan [CharacterSheet](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/CharacterSheet.java), joka vastaa lomakkeen tiedoista ja niiden satunnaistamisesta, ja josta käyttöliittymä poimii kaiken tarvittavan tiedon. [SheetSaver](https://github.com/anninmal/ot-harjoitustyo/blob/master/CharacterSheetGenerator5e/src/main/java/charactersheetgenerator/domain/SheetSaver.java)-oliota käyttöliittymä käyttää lomakkeiden tallentamiseen. Käyttöliittymä ei siis vastaa sovelluslogiikasta.
 
 ## Sovelluslogiikka
-Suurimmasta osasta sovelluksen toiminnallisuuksista vastaa luokka CharacterSheet.
+Suurimmasta osasta sovelluksen toiminnallisuuksista vastaa luokka CharacterSheet, joka tuntee seuraavat luokat:
+- Race, joka hallitsee rotuihin liittyviä tietoja
+- CharacterClass, joka hallitsee luokiin liittyviä tietoja
+- Background, joka hallitsee taustoihin liittyviä tietoja
+- FileReader, joka vastaa tiedostojen lukemisesta
+
+CharacterSheet-luokka käyttää FileReader-oliota lukeakseen tiedostoja, joiden tiedot tallennetaan listoihin. Luokka vastaa tietyn tai satunnaisen rodun/luokan/taustan/hengenlaadun valitsemisesta, kykyarvojen satunnaisesta generoimisesta, kykyarvojen ja niihin liittyvän tiedon käsittelystä, muiden satunnaisten piirteiden valitsemisesta, ja käyttöliittymälle sopivien tekstien rakentamisesta.
 
 ### Luokka/pakkauskaavio
-<img src="https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luokka-pakkauskaavio1.png?raw=true">
+<img src="https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luokkapakkauskaavio_uusi.png">
 
 ## Sekvenssikaavio
 Sekvenssikaavio kuvaa hahmolomakkeen luonnin yhteydesä tapahtuvaa hengenlaatulistan luomista, sekä satunnaisen hengenlaadun arpomista.
