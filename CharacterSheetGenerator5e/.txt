@@ -1,50 +1,50 @@
+AAA
+Tiefling | Paladin 1
+Acolyte | Chaotic Neutral
 
-Hill Dwarf | Fighter 1
-Criminal | Chaotic Evil
+STR 13 [1] / DEX 12 [1] / CON 15 [2] / INT 13 [1] / WIS 11 [0] / CHA 16 [3]
 
-STR 14 [2] / DEX 11 [0] / CON 17 [3] / INT 10 [0] / WIS 16 [3] / CHA 14 [2]
-
-Hit Points: 13
+Hit Points: 12
 Hit Dice: 1d10
 
 Proficiency Bonus: 2
-Armor Class: 10 (+ armor)
-Initiative: 2
-Speed: 25
+Armor Class: 11 (+ armor)
+Initiative: 3
+Speed: 30
 
 Saving Throws:
-o 4 Strength
-   0 Dexterity
-o 5 Constitution
-   0 Intelligence
-   3 Wisdom
-   2 Charisma
+   1 Strength
+   1 Dexterity
+   2 Constitution
+   1 Intelligence
+o 2 Wisdom
+o 5 Charisma
 
 Skills:
-   0 Acrobatics (Dex)
-   3 Animal Handling (Wis)
-   0 Arcana (Int)
-   2 Athletics (Str)
-o 4 Deception (Cha)
-o 2 History (Int)
-   3 Insight (Wis)
-o 4 Intimidation (Cha)
-   0 Investigation (Int)
-   3 Medicine (Wis)
-   0 Nature (Int)
-   3 Perception (Wis)
-   2 Performance (Cha)
-   2 Persuasion (Cha)
-   0 Religion (Int)
-   0 Sleight of Hand (Dex)
-o 2 Stealth (Dex)
-   3 Survival (Wis)
+   1 Acrobatics (Dex)
+   0 Animal Handling (Wis)
+   1 Arcana (Int)
+   1 Athletics (Str)
+   3 Deception (Cha)
+   1 History (Int)
+o 2 Insight (Wis)
+   3 Intimidation (Cha)
+   1 Investigation (Int)
+o 2 Medicine (Wis)
+   1 Nature (Int)
+   0 Perception (Wis)
+   3 Performance (Cha)
+   3 Persuasion (Cha)
+o 3 Religion (Int)
+   1 Sleight of Hand (Dex)
+   1 Stealth (Dex)
+   0 Survival (Wis)
 
 Proficiencies:
-one type of gaming set, thieves' tools, all armor, shields, simple weapons, martial weapons, battleaxe, handaxe, light hammer, warhammer, artisan's tools, Common, Dwarven
+Two languages of your choice, all armor, shields, simple weapons, martial weapons, Common, Infernal
 
 Equipment:
-chain mail OR leather armor + longbow + 20 arrows, martial weapon + shield OR two martial weapons, light crossbow + 20 bolts OR two handaxes, dungeoneer's pack OR exporer's pack, crowbar, set of dark common clothes including a hood
+martial weapon and shield OR two martial weapons, five javelins OR any simple melee weapon, priest's pack OR explorer's pack, chain mail, holy symbol, holy symbol, prayer book, 5 sticks of incense, vestments, set of common clothes
 
 CP:
 SP:
@@ -53,39 +53,33 @@ EP:
 PP:
 
 Personality Traits:
-I blow up at the slightest insult.
+I’ve enjoyed fine food, drink, and high society among my temple’s elite. Rough living grates on me.
 
 Ideals:
-Greed. I will do whatever it takes to become wealthy.
+Power. I hope to one day rise to the top of my faith’s religious Hierarchy.
 
 Bonds:
-I'm trying to pay off an old debt I owe to a generous benefactor.
+I will someday get revenge on the corrupt Temple Hierarchy who branded me a heretic.
 
 Flaws:
-When faced with a choice between money and my friends, I usually choose the money.
+I am inflexible in my thinking.
 
 Features & Traits:
-[Darkvision] Accustomed to life Underground, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can't discern color in Darkness, only Shades of Gray.
+[Darkvision] Thanks to your Infernal heritage, you have superior vision in dark and dim Conditions. You can see in dim light within 60 feet of you as if it were bright light, and in Darkness as if it were dim light. You can't discern color in Darkness, only Shades of Gray.
 
-[Dwarven Resilience] You have advantage on Saving Throws against poison, and you have Resistance against poison damage.
+[Hellish Resistance] You have Resistance to fire damage.
 
-[Dwarven Combat Training] You have proficiency with the Battleaxe, Handaxe, Light Hammer, and Warhammer.
+[Infernal Legacy] You know the Thaumaturgy cantrip. When you reach 3rd Level, you can cast the Hellish Rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a Long Rest. When you reach 5th Level, you can cast the Darkness spell once with this trait and regain the ability to do so when you finish a Long Rest. Charisma is your Spellcasting Ability for these Spells.
 
-[Tool Proficiency] You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.
+[Divine Sense] The presence of strong evil registers on your Senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any Celestial, fiend, or Undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the Vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the Hallow spell. You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a Long Rest, you regain all expended uses.
 
-[Stonecunning] Whenever you make an Intelligence (History) check related to the Origin of stonework, you are considered proficient in the History skill and add double your Proficiency Bonus to the check, instead of your normal Proficiency Bonus.
+[Lay on Hands] Your blessed touch can heal wounds. You have a pool of Healing power that replenishes when you take a Long Rest. With that pool, you can restore a total number of Hit Points equal to your Paladin level x 5. As an action, you can touch a creature and draw power from the pool to restore a number of Hit Points to that creature, up to the maximum amount remaining in your pool. Alternatively, you can expend 5 Hit Points from your pool of Healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple Diseases and neutralize multiple Poisons with a single use of Lay on Hands, expending Hit Points separately for each one. This feature has no effect on Undead and Constructs.
 
-[Dwarven Toughness] Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
-
-[Fighting Style] You adopt a particular style of fighting as your specialty. Choose a Fighting Style from the list of optional features. You can't take the same Fighting Style option more than once, even if you get to choose again.
-
-[Second Wind] You have a limited well of stamina that you can draw on to protect yourself from harm. On Your Turn, you can use a Bonus Action to regain Hit Points equal to 1d10 + your Fighter level. Once you use this feature, you must finish a short or Long Rest before you can use it again.
-
-[Criminal Contact] You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you.
+[Shelter of the Faithful] As an acolyte, you Command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your Adventuring companions can expect to receive free Healing and care at a Temple, shrine, or other established presence of your faith, though you must provide any material Components needed for Spells. Those who share your Religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific Temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the Temple where you used to serve, if you remain on good terms with it, or a Temple where you have found a new home. While near your Temple, you can call upon the Priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your Temple.
 
 Spells:
 0:
--
+Thaumaturgy
 
 1:
 -

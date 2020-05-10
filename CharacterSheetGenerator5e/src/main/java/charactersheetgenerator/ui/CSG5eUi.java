@@ -24,7 +24,6 @@ import javafx.stage.Stage;
 public class CSG5eUi extends Application {
     private Scene startScene;
     private Scene sheetScene;
-    
     private VBox fullSheet;
     private VBox saveInfo;
     private Label sheetNameLabel;
@@ -43,7 +42,11 @@ public class CSG5eUi extends Application {
     @Override
     public void init() throws Exception {
         this.characterSheet = new CharacterSheet();
-        this.characterSheet.setUpSheet();
+        try {
+            this.characterSheet.setUpSheet();
+        } catch(Exception e) {
+        }
+        
         saveInfoIndicator = false;
     }
     
@@ -230,7 +233,7 @@ public class CSG5eUi extends Application {
         VBox content = new VBox();
         
         Label titleLabel = new Label("Dungeons & Dragons 5th Edition" + "\n" + "Random Character Sheet Generator");
-        Label instructionsLabel = new Label("Pick race, class, alignment, and background for your character!\n\nOptions left empty will be randomized.\nPicking a name is optional.\n\n(All game resources used in this application are available for free as part of\nthe Basic Rules at the official website 'dndbeyond.com', which also features\nrules and additional information necessary for play.)\n\n");
+        Label instructionsLabel = new Label("Pick race, class, alignment, and background for your character!\nOptions left empty will be randomized.\nPicking a name is optional.\n\n(All game resources used in this application are available for free as part of\nthe Basic Rules at the official website 'dndbeyond.com', which also features\nrules and additional information necessary for play.)\n\n");
         Label nameLabel = new Label("Name:");
         Label raceLabel = new Label("Race:");
         Label classLabel = new Label("Class:");
@@ -243,7 +246,8 @@ public class CSG5eUi extends Application {
         ChoiceBox alignmentChoice = new ChoiceBox();
         ChoiceBox backgroundChoice = new ChoiceBox();
         
-        raceChoice.getItems().add(null);
+        try {
+            raceChoice.getItems().add(null);
         this.characterSheet.getRaces().forEach(race-> {
             raceChoice.getItems().add(race.getName());
         }); 
@@ -261,7 +265,13 @@ public class CSG5eUi extends Application {
         backgroundChoice.getItems().add(null);
         this.characterSheet.getBackgrounds().forEach(background-> {
             backgroundChoice.getItems().add(background.getName());
-        }); 
+        });
+        } catch(Exception e) {
+            raceChoice.getItems().add("ERROR: Files could not be read.");
+            classChoice.getItems().add("ERROR: Files could not be read.");
+            backgroundChoice.getItems().add("ERROR: Files could not be read.");
+            alignmentChoice.getItems().add("ERROR: Files could not be read.");
+        }
 
         sheetNameLabel = new Label("");
         errorLabel = new Label(" ");
