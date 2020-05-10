@@ -19,5 +19,5 @@
 | 7.5. | 4 | ylipitkiä metodeja lyhennetty. |
 | 8.5. | 4 | satunnaista muokkausta. ohjelman tiedostoilla nyt uusi formaatti. |
 | 9.5. | 5 | hahmolomakkeen voi nyt tallentaa tiedostolle. |
-| 10.5. | 10 | sovellusta muokattu, testausta laajennettu. dokumentaatio. viimeistelyt. |
-| yht   | 67   | | 
+| 10.5. | 12 | sovellusta muokattu, testausta laajennettu. dokumentaatio. viimeistelyt. |
+| yht   | 69   | | 
