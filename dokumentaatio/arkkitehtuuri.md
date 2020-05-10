@@ -23,6 +23,32 @@ CharacterSheet-luokka käyttää FileReader-oliota lukeakseen tiedostoja, joiden
 ### Luokka/pakkauskaavio
 <img src="https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luokkapakkauskaavio_uusi.png">
 
-## Sekvenssikaavio
+## Lomakkeen tallennus
+Generoidun lomakkeen voi tallentaa tekstitiedostoon. Tallennuksesta vastaa luokka SheetSaver. Tallennettava tieto formatoidaan suhteellisen lukijaystävälliseen muotoon.
+
+<img src="https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/tesktiesimerkki.png">
+
+## Tiedostot
+Sovellus lukee tietoja kolmesta eri tiedostosta, *races.txt*, *classes.txt* ja *backgrounds.txt*, joilla on toisiaan vastaava formaatti. Jokainen tiedosto alkaa merkkien selityksellä. Esimerkki:
+ <pre>
+ Key: NAM: Name, SPE: speed, ASI: ability score increase ([ability score index][increase]), TRA: trait, PRO: proficiency
+  
+ START
+ NAMHalfling
+ SPE25
+ ASI12
+ ASI51
+ TRA[Lucky] When you roll a 1 on The D20 for an Attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.
+ TRA[Brave] You have advantage on Saving Throws against being Frightened.
+ TRA[Halfling Nimbleness] You can move through the space of any creature that is of a size larger than yours.
+ TRA[Naturally Stealthy] You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.
+ PROCommon
+ PROHalfling
+ STOP
+ </pre>
+
+Jokaista ominaisuutta siis edeltää kolmikirjaiminen koodi, jonka avulla ohjelma lajittelee tekstin. Yhteen erilliseen olioon tuleva tieto on avainsanojen START ja STOP välissä.
+
+### Sekvenssikaavio
 Sekvenssikaavio kuvaa hahmolomakkeen luonnin yhteydesä tapahtuvaa hengenlaatulistan luomista, sekä satunnaisen hengenlaadun arpomista.
 <img src="https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio_viikko5.png?raw=true">
