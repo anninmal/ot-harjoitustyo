@@ -11,3 +11,6 @@ Testit tarkistavat myös, että tiedostot on luettu, ja että tiedostojen perust
 Sovelluksen testit ovat kattavia. Ainoastaan Main-luokka on vailla testausta.
 
 <img src="https://github.com/anninmal/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/testikattavuus.png">
+
+## Järjestelmätestaus
+Sovelluksen mahdollisia virhetilanteita on testattu manuaalisesti antamalla tyhjiä syötteitä ja poistamalla sovelluksen tarvitsemat tiedostot. Tiedostojen puuttuessa, sovelluksen on tarkoitus antaa virheilmoitus tavallisten valintojen sijaan.
