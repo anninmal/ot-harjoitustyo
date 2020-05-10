@@ -15,4 +15,9 @@
 | 21.4. | 5 | käyttöliittymää ja hahmolomakkeen hallinta-/satunnaistajaluokkaa laajennettu. sovellus näyttää nyt käyttäjälle enemmän tietoa, kuten hahmon rodun, luokan, taustan, hengenlaadun, varusteet, taitoperehtyneisyydet, ym. "saving throws" ja "skills" toimii muuten, paisti että ne näyttävät jostain (tällä hetkellä) käsittämättömästä syystä aivan vääriä arvoja... |
 | 27.4. | 4 | loin FileReader-luokan, joka lukee rotuun, luokkaan ja taustaan liittyvän tiedon tiedostoista. |
 | 28.4. | 7 | hahmolomakkeessa näkyy nyt hahmon luonteenpiirteet. käyttäjä voi myös nyt valita haluamansa piirteet aloitusnäkymästä, ja hahmolomake generoidaan valintojen perusteella. nyt uuden hahmolomakkeen voi myös generoida hahmolomakenäkymästä. |
-| yht   | 43   | | 
+| 6.5. | 1 | pikkuasioiden muokkailua. |
+| 7.5. | 4 | ylipitkiä metodeja lyhennetty. |
+| 8.5. | 4 | satunnaista muokkausta. ohjelman tiedostoilla nyt uusi formaatti. |
+| 9.5. | 5 | hahmolomakkeen voi nyt tallentaa tiedostolle. |
+| 10.5. | 10 | sovellusta muokattu, testausta laajennettu. dokumentaatio. viimeistelyt. |
+| yht   | 67   | | 
